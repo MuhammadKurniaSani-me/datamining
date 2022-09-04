@@ -388,8 +388,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#categrical-nomimal-features">
-       Categrical/Nomimal Features
+      <a class="reference internal nav-link" href="#categorical-nomimal-features">
+       Categorical/Nomimal Features
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
@@ -453,8 +453,8 @@ title="Print to PDF"
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#categrical-nomimal-features">
-       Categrical/Nomimal Features
+      <a class="reference internal nav-link" href="#categorical-nomimal-features">
+       Categorical/Nomimal Features
       </a>
      </li>
      <li class="toc-h3 nav-item toc-entry">
@@ -476,8 +476,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <p><a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining_backup/blob/main/notebooks.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab"/></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="content-with-notebooks">
+  <section class="tex2jax_ignore mathjax_ignore" id="content-with-notebooks">
 <h1>Content with notebooks<a class="headerlink" href="#content-with-notebooks" title="Permalink to this headline">#</a></h1>
 <p>You can also create content with Jupyter Notebooks. This means that you can include
 code blocks and their outputs in your book.</p>
@@ -544,7 +543,7 @@ For example, here’s some sample Matplotlib code:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/notebooks_3_0.png" src="_images/notebooks_3_0.png" />
+<img alt="_images/notebooks_2_0.png" src="_images/notebooks_2_0.png" />
 </div>
 </div>
 <p>There is a lot more that you can do with outputs (such as including interactive outputs)
@@ -571,18 +570,6 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pwd</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/content/drive/MyDrive/datamining/tugas&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 </pre></div>
@@ -590,7 +577,7 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">d5df0069828e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">d5df0069828e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
 
@@ -627,18 +614,6 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">cd</span> /content/drive/MyDrive/datamining/
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/content/drive/MyDrive/datamining
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create dataset from Google Drive</span>
 <span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/MuhammadKurniaSani-me/Titanic-Dataset/main/dataset/train.csv&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">dataset_url</span><span class="p">)</span>
@@ -654,7 +629,7 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b5c6845b-eb05-442d-9b1c-8de0cebbc1fd">
+  <div id="df-591f15a2-fa62-4db1-ba37-4e8d8e5372f7">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -858,7 +833,7 @@ with your book. For more information about this, see <a class="reference externa
 </table>
 <p>891 rows × 12 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b5c6845b-eb05-442d-9b1c-8de0cebbc1fd')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-591f15a2-fa62-4db1-ba37-4e8d8e5372f7')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -909,12 +884,12 @@ with your book. For more information about this, see <a class="reference externa
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b5c6845b-eb05-442d-9b1c-8de0cebbc1fd button.colab-df-convert');
+          document.querySelector('#df-591f15a2-fa62-4db1-ba37-4e8d8e5372f7 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b5c6845b-eb05-442d-9b1c-8de0cebbc1fd');
+          const element = document.querySelector('#df-591f15a2-fa62-4db1-ba37-4e8d8e5372f7');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -938,12 +913,12 @@ with your book. For more information about this, see <a class="reference externa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show dataset shape</span>
-<span class="n">df</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">number_of_columns</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(891, 12)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
 </div>
@@ -951,8 +926,8 @@ with your book. For more information about this, see <a class="reference externa
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Show all columns for dataset</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_columns&#39;</span><span class="p">,</span> <span class="n">number_of_columns</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s1">&#39;display.max_rows&#39;</span><span class="p">,</span> <span class="n">number_of_columns</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -972,8 +947,8 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 </div>
 </div>
-<section id="categrical-nomimal-features">
-<h3>Categrical/Nomimal Features<a class="headerlink" href="#categrical-nomimal-features" title="Permalink to this headline">#</a></h3>
+<section id="categorical-nomimal-features">
+<h3>Categorical/Nomimal Features<a class="headerlink" href="#categorical-nomimal-features" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Survived</p></li>
 <li><p>Embarked</p></li>
@@ -986,7 +961,7 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-834f79c5-d455-4afb-805f-74f4bba58526">
+  <div id="df-d0925323-f0cb-45c1-a9b8-3fe9d463b0e3">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1051,7 +1026,7 @@ with your book. For more information about this, see <a class="reference externa
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-834f79c5-d455-4afb-805f-74f4bba58526')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d0925323-f0cb-45c1-a9b8-3fe9d463b0e3')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1102,12 +1077,12 @@ with your book. For more information about this, see <a class="reference externa
 
       <script>
         const buttonEl =
-          document.querySelector('#df-834f79c5-d455-4afb-805f-74f4bba58526 button.colab-df-convert');
+          document.querySelector('#df-d0925323-f0cb-45c1-a9b8-3fe9d463b0e3 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-834f79c5-d455-4afb-805f-74f4bba58526');
+          const element = document.querySelector('#df-d0925323-f0cb-45c1-a9b8-3fe9d463b0e3');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1168,7 +1143,7 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-292ea4ad-6e73-4354-88f9-41dbf7b0b3dc">
+  <div id="df-4471e45b-f3fa-4f0a-bc17-b66fa070a610">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1233,7 +1208,7 @@ with your book. For more information about this, see <a class="reference externa
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-292ea4ad-6e73-4354-88f9-41dbf7b0b3dc')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4471e45b-f3fa-4f0a-bc17-b66fa070a610')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1284,12 +1259,12 @@ with your book. For more information about this, see <a class="reference externa
 
       <script>
         const buttonEl =
-          document.querySelector('#df-292ea4ad-6e73-4354-88f9-41dbf7b0b3dc button.colab-df-convert');
+          document.querySelector('#df-4471e45b-f3fa-4f0a-bc17-b66fa070a610 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-292ea4ad-6e73-4354-88f9-41dbf7b0b3dc');
+          const element = document.querySelector('#df-4471e45b-f3fa-4f0a-bc17-b66fa070a610');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1353,7 +1328,7 @@ with your book. For more information about this, see <a class="reference externa
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d70e35bd-c4ea-4080-9582-8a63a1873137">
+  <div id="df-9261a2dd-c1a2-436a-a17d-9ce673d4bb73">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1391,7 +1366,7 @@ with your book. For more information about this, see <a class="reference externa
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d70e35bd-c4ea-4080-9582-8a63a1873137')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9261a2dd-c1a2-436a-a17d-9ce673d4bb73')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1442,12 +1417,12 @@ with your book. For more information about this, see <a class="reference externa
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d70e35bd-c4ea-4080-9582-8a63a1873137 button.colab-df-convert');
+          document.querySelector('#df-9261a2dd-c1a2-436a-a17d-9ce673d4bb73 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d70e35bd-c4ea-4080-9582-8a63a1873137');
+          const element = document.querySelector('#df-9261a2dd-c1a2-436a-a17d-9ce673d4bb73');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
