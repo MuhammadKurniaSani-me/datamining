@@ -740,7 +740,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-83a52b63-90f4-4a2f-a4fd-a5de207a3c23">
+  <div id="df-9b18551f-d4ec-495e-b612-bc33f0403807">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -851,7 +851,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-83a52b63-90f4-4a2f-a4fd-a5de207a3c23')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9b18551f-d4ec-495e-b612-bc33f0403807')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -902,12 +902,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-83a52b63-90f4-4a2f-a4fd-a5de207a3c23 button.colab-df-convert');
+          document.querySelector('#df-9b18551f-d4ec-495e-b612-bc33f0403807 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-83a52b63-90f4-4a2f-a4fd-a5de207a3c23');
+          const element = document.querySelector('#df-9b18551f-d4ec-495e-b612-bc33f0403807');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -936,6 +936,9 @@ title="Print to PDF"
 <span class="n">SEPAL_WIDTH_SERIES</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;sepal.width&quot;</span><span class="p">]</span>
 <span class="n">PETAL_LENGTH_SERIES</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;petal.length&quot;</span><span class="p">]</span>
 <span class="n">PETAL_WIDTH_SERIES</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;petal.width&quot;</span><span class="p">]</span>
+
+<span class="c1"># Class Variety Name </span>
+<span class="n">IRIS_VARIETY</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -986,7 +989,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of sepal-width and sepal category</span>
-<span class="n">df_sepal_width_ew</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">sepal_width_ew_binning</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df_sepal_width_ew</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">sepal_width_ew_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -994,7 +997,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_sepal_width_ew</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal.width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_sepal_width_ew</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal.width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1007,7 +1010,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-3a233b37-8096-47b1-abc0-424ac5bb8cd5">
+  <div id="df-616eae53-7641-4b53-9e3b-84cd559578ed">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1029,6 +1032,7 @@ title="Print to PDF"
       <th></th>
       <th>sepal.width</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -1036,29 +1040,35 @@ title="Print to PDF"
       <th>0</th>
       <td>3.5</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3.2</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3.1</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>3.6</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -1066,32 +1076,37 @@ title="Print to PDF"
       <th>145</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>2.5</td>
       <td>sedikit_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>3.4</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-3a233b37-8096-47b1-abc0-424ac5bb8cd5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-616eae53-7641-4b53-9e3b-84cd559578ed')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1142,12 +1157,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-3a233b37-8096-47b1-abc0-424ac5bb8cd5 button.colab-df-convert');
+          document.querySelector('#df-616eae53-7641-4b53-9e3b-84cd559578ed button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-3a233b37-8096-47b1-abc0-424ac5bb8cd5');
+          const element = document.querySelector('#df-616eae53-7641-4b53-9e3b-84cd559578ed');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1226,7 +1241,7 @@ Name: sepal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of petal-width and petal category</span>
-<span class="n">df_petal_width</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">petal_width_ew_binning</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df_petal_width</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">petal_width_ew_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1234,7 +1249,7 @@ Name: sepal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_petal_width</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal.width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_petal_width</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal.width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1247,7 +1262,7 @@ Name: sepal.width, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ed67bc38-fb69-449e-94c2-03868c7b2348">
+  <div id="df-f49ab990-12c3-4fb9-a2d4-3e819399adbc">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1269,6 +1284,7 @@ Name: sepal.width, dtype: int64
       <th></th>
       <th>petal.width</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -1276,29 +1292,35 @@ Name: sepal.width, dtype: int64
       <th>0</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -1306,32 +1328,37 @@ Name: sepal.width, dtype: int64
       <th>145</th>
       <td>2.3</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>1.9</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>2.0</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>2.3</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>1.8</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ed67bc38-fb69-449e-94c2-03868c7b2348')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f49ab990-12c3-4fb9-a2d4-3e819399adbc')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1382,12 +1409,12 @@ Name: sepal.width, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ed67bc38-fb69-449e-94c2-03868c7b2348 button.colab-df-convert');
+          document.querySelector('#df-f49ab990-12c3-4fb9-a2d4-3e819399adbc button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ed67bc38-fb69-449e-94c2-03868c7b2348');
+          const element = document.querySelector('#df-f49ab990-12c3-4fb9-a2d4-3e819399adbc');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1467,7 +1494,7 @@ Name: petal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of sepal-width and sepal category</span>
-<span class="n">df_sepal_length_ew</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_LENGTH_SERIES</span><span class="p">,</span> <span class="n">sepal_length_ew_binning</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df_sepal_length_ew</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_LENGTH_SERIES</span><span class="p">,</span> <span class="n">sepal_length_ew_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1475,7 +1502,7 @@ Name: petal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_sepal_length_ew</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_sepal_length_ew</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1488,7 +1515,7 @@ Name: petal.width, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-f781a7fc-4d07-42c6-a55e-ee5940acd146">
+  <div id="df-a6b7d839-ebf3-4553-bb4b-282bf00ac382">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1510,6 +1537,7 @@ Name: petal.width, dtype: int64
       <th></th>
       <th>sepal_length</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -1517,29 +1545,35 @@ Name: petal.width, dtype: int64
       <th>0</th>
       <td>5.1</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>4.9</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>4.7</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4.6</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5.0</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -1547,32 +1581,37 @@ Name: petal.width, dtype: int64
       <th>145</th>
       <td>6.7</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>6.3</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>6.5</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>6.2</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>5.9</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-f781a7fc-4d07-42c6-a55e-ee5940acd146')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-a6b7d839-ebf3-4553-bb4b-282bf00ac382')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1623,12 +1662,12 @@ Name: petal.width, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-f781a7fc-4d07-42c6-a55e-ee5940acd146 button.colab-df-convert');
+          document.querySelector('#df-a6b7d839-ebf3-4553-bb4b-282bf00ac382 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-f781a7fc-4d07-42c6-a55e-ee5940acd146');
+          const element = document.querySelector('#df-a6b7d839-ebf3-4553-bb4b-282bf00ac382');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1707,7 +1746,7 @@ Name: sepal.length, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of petal-width and petal category</span>
-<span class="n">df_petal_length_ew</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_LENGTH_SERIES</span><span class="p">,</span><span class="n">petal_length_ew_binning</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df_petal_length_ew</span> <span class="o">=</span>  <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_LENGTH_SERIES</span><span class="p">,</span><span class="n">petal_length_ew_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1715,7 +1754,7 @@ Name: sepal.length, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_petal_length_ew</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_petal_length_ew</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1728,7 +1767,7 @@ Name: sepal.length, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a4cf443a-c4dc-47dc-b37e-752b3ef46415">
+  <div id="df-6edd756e-e351-483d-b64f-e45ee6568d46">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1750,6 +1789,7 @@ Name: sepal.length, dtype: int64
       <th></th>
       <th>petal_length</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -1757,29 +1797,35 @@ Name: sepal.length, dtype: int64
       <th>0</th>
       <td>1.4</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1.4</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1.3</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>1.5</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>1.4</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -1787,32 +1833,37 @@ Name: sepal.length, dtype: int64
       <th>145</th>
       <td>5.2</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>5.0</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>5.2</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>5.4</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>5.1</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a4cf443a-c4dc-47dc-b37e-752b3ef46415')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-6edd756e-e351-483d-b64f-e45ee6568d46')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1863,12 +1914,12 @@ Name: sepal.length, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a4cf443a-c4dc-47dc-b37e-752b3ef46415 button.colab-df-convert');
+          document.querySelector('#df-6edd756e-e351-483d-b64f-e45ee6568d46 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a4cf443a-c4dc-47dc-b37e-752b3ef46415');
+          const element = document.querySelector('#df-6edd756e-e351-483d-b64f-e45ee6568d46');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1958,7 +2009,7 @@ Name: petal.length, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of sepal-width and sepal category</span>
-<span class="n">df_sepal_width_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">sepal_width_ef_binning</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">df_sepal_width_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">sepal_width_ef_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1966,7 +2017,7 @@ Name: petal.length, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_sepal_width_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_sepal_width_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1979,7 +2030,7 @@ Name: petal.length, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-83546620-fad6-4aed-b5b5-acafb8e40ea5">
+  <div id="df-9ecdd363-c964-47f6-ab51-7d6c721d60b2">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2001,6 +2052,7 @@ Name: petal.length, dtype: int64
       <th></th>
       <th>sepal_width</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -2008,29 +2060,35 @@ Name: petal.length, dtype: int64
       <th>0</th>
       <td>3.5</td>
       <td>sangat_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>3.2</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>3.1</td>
       <td>lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>3.6</td>
       <td>sangat_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -2038,32 +2096,37 @@ Name: petal.length, dtype: int64
       <th>145</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>2.5</td>
       <td>sedikit_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>3.4</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>3.0</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-83546620-fad6-4aed-b5b5-acafb8e40ea5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-9ecdd363-c964-47f6-ab51-7d6c721d60b2')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -2114,12 +2177,12 @@ Name: petal.length, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-83546620-fad6-4aed-b5b5-acafb8e40ea5 button.colab-df-convert');
+          document.querySelector('#df-9ecdd363-c964-47f6-ab51-7d6c721d60b2 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-83546620-fad6-4aed-b5b5-acafb8e40ea5');
+          const element = document.querySelector('#df-9ecdd363-c964-47f6-ab51-7d6c721d60b2');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2199,7 +2262,7 @@ Name: sepal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of petal-width and petal category</span>
-<span class="n">df_petal_width_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">petal_width_ef_binning</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">df_petal_width_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_WIDTH_SERIES</span><span class="p">,</span> <span class="n">petal_width_ef_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2207,7 +2270,7 @@ Name: sepal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_petal_width_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_petal_width_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2220,7 +2283,7 @@ Name: sepal.width, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-66272bfa-25a2-42e0-be00-da6e3e71dbc5">
+  <div id="df-821e000c-8225-408d-8843-af58490fead1">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2242,6 +2305,7 @@ Name: sepal.width, dtype: int64
       <th></th>
       <th>petal_width</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -2249,29 +2313,35 @@ Name: sepal.width, dtype: int64
       <th>0</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -2279,32 +2349,37 @@ Name: sepal.width, dtype: int64
       <th>145</th>
       <td>2.3</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>1.9</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>2.0</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>2.3</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>1.8</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-66272bfa-25a2-42e0-be00-da6e3e71dbc5')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-821e000c-8225-408d-8843-af58490fead1')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -2355,12 +2430,12 @@ Name: sepal.width, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-66272bfa-25a2-42e0-be00-da6e3e71dbc5 button.colab-df-convert');
+          document.querySelector('#df-821e000c-8225-408d-8843-af58490fead1 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-66272bfa-25a2-42e0-be00-da6e3e71dbc5');
+          const element = document.querySelector('#df-821e000c-8225-408d-8843-af58490fead1');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2440,7 +2515,7 @@ Name: petal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of sepal-length and sepal category</span>
-<span class="n">df_sepal_length_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_LENGTH_SERIES</span><span class="p">,</span> <span class="n">sepal_length_ef_binning</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df_sepal_length_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">SEPAL_LENGTH_SERIES</span><span class="p">,</span> <span class="n">sepal_length_ef_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2448,7 +2523,7 @@ Name: petal.width, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_sepal_length_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_sepal_length_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2461,7 +2536,7 @@ Name: petal.width, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-57732c72-c540-4b3b-9ddb-78ce8a324048">
+  <div id="df-f896f2d0-0b11-4468-8173-e3121fd78eec">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2483,6 +2558,7 @@ Name: petal.width, dtype: int64
       <th></th>
       <th>sepal_length</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -2490,29 +2566,35 @@ Name: petal.width, dtype: int64
       <th>0</th>
       <td>5.1</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>4.9</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>4.7</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>4.6</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>5.0</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -2520,32 +2602,37 @@ Name: petal.width, dtype: int64
       <th>145</th>
       <td>6.7</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>6.3</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>6.5</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>6.2</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>5.9</td>
       <td>lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-57732c72-c540-4b3b-9ddb-78ce8a324048')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f896f2d0-0b11-4468-8173-e3121fd78eec')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -2596,12 +2683,12 @@ Name: petal.width, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-57732c72-c540-4b3b-9ddb-78ce8a324048 button.colab-df-convert');
+          document.querySelector('#df-f896f2d0-0b11-4468-8173-e3121fd78eec button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-57732c72-c540-4b3b-9ddb-78ce8a324048');
+          const element = document.querySelector('#df-f896f2d0-0b11-4468-8173-e3121fd78eec');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2681,7 +2768,7 @@ Name: sepal.length, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dataframe of petal-length and petal category</span>
-<span class="n">df_petal_length_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_LENGTH_SERIES</span><span class="p">,</span> <span class="n">petal_length_ef_binning</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">df_petal_length_ef</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">PETAL_LENGTH_SERIES</span><span class="p">,</span> <span class="n">petal_length_ef_binning</span><span class="p">,</span> <span class="n">IRIS_VARIETY</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -2689,7 +2776,7 @@ Name: sepal.length, dtype: int64
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change columns name</span>
-<span class="n">df_petal_length_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">]</span>
+<span class="n">df_petal_length_ef</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="s2">&quot;category&quot;</span><span class="p">,</span> <span class="s2">&quot;variety&quot;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -2702,7 +2789,7 @@ Name: sepal.length, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d6c6049c-80f0-4741-a272-7b5106f0b840">
+  <div id="df-30fd4c0f-81a7-4b5e-a234-cf68bce1c2ec">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2724,6 +2811,7 @@ Name: sepal.length, dtype: int64
       <th></th>
       <th>petal_length</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -2731,29 +2819,35 @@ Name: sepal.length, dtype: int64
       <th>0</th>
       <td>1.4</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>1.4</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>1.3</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>1.5</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>1.4</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -2761,32 +2855,37 @@ Name: sepal.length, dtype: int64
       <th>145</th>
       <td>5.2</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>5.0</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>5.2</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>5.4</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>5.1</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d6c6049c-80f0-4741-a272-7b5106f0b840')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-30fd4c0f-81a7-4b5e-a234-cf68bce1c2ec')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -2837,12 +2936,12 @@ Name: sepal.length, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d6c6049c-80f0-4741-a272-7b5106f0b840 button.colab-df-convert');
+          document.querySelector('#df-30fd4c0f-81a7-4b5e-a234-cf68bce1c2ec button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d6c6049c-80f0-4741-a272-7b5106f0b840');
+          const element = document.querySelector('#df-30fd4c0f-81a7-4b5e-a234-cf68bce1c2ec');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -2948,7 +3047,7 @@ Name: petal.length, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-4bf3ab56-9d2e-48ac-94a8-511235bacdaa">
+  <div id="df-0fd41703-a101-4e11-b7d7-3a94cc728df7">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -2970,6 +3069,7 @@ Name: petal.length, dtype: int64
       <th></th>
       <th>petal_width</th>
       <th>category</th>
+      <th>variety</th>
     </tr>
   </thead>
   <tbody>
@@ -2977,29 +3077,35 @@ Name: petal.length, dtype: int64
       <th>0</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>1</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>2</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>3</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>4</th>
       <td>0.2</td>
       <td>sedikit_lebar</td>
+      <td>Setosa</td>
     </tr>
     <tr>
       <th>...</th>
+      <td>...</td>
       <td>...</td>
       <td>...</td>
     </tr>
@@ -3007,32 +3113,37 @@ Name: petal.length, dtype: int64
       <th>145</th>
       <td>2.3</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>146</th>
       <td>1.9</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>147</th>
       <td>2.0</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>148</th>
       <td>2.3</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
     <tr>
       <th>149</th>
       <td>1.8</td>
       <td>sangat_lebar</td>
+      <td>Virginica</td>
     </tr>
   </tbody>
 </table>
-<p>150 rows × 2 columns</p>
+<p>150 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-4bf3ab56-9d2e-48ac-94a8-511235bacdaa')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-0fd41703-a101-4e11-b7d7-3a94cc728df7')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -3083,12 +3194,12 @@ Name: petal.length, dtype: int64
 
       <script>
         const buttonEl =
-          document.querySelector('#df-4bf3ab56-9d2e-48ac-94a8-511235bacdaa button.colab-df-convert');
+          document.querySelector('#df-0fd41703-a101-4e11-b7d7-3a94cc728df7 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-4bf3ab56-9d2e-48ac-94a8-511235bacdaa');
+          const element = document.querySelector('#df-0fd41703-a101-4e11-b7d7-3a94cc728df7');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -3212,6 +3323,9 @@ Name: petal.length, dtype: int64
 <li><p>Hitung target <em>entropy</em> dengan <em>split value</em></p></li>
 <li><p>Hitung <em>entropy gain</em></p></li>
 </ul>
+<ul class="simple">
+<li><p>Entropy inisial atau awal</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># entropy data target</span>
@@ -3220,6 +3334,12 @@ Name: petal.length, dtype: int64
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><strong>Entropy uji coba 1</strong></p></li>
+<li><p>Nilai <em>split</em> yaitu 0.7</p></li>
+<li><p>Data kurang dari <span class="math notranslate nohighlight">\( &lt; 0.7 \)</span></p></li>
+<li><p>Data kurang dari <span class="math notranslate nohighlight">\( &gt;= 0.7 \)</span></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count Entropy for the target given a split value, split value = 0.7</span>
@@ -3228,6 +3348,35 @@ Name: petal.length, dtype: int64
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p><strong>Entropy uji coba 2</strong></p></li>
+<li><p>Nilai <em>split</em> yaitu <span class="math notranslate nohighlight">\( 1.4 \)</span></p></li>
+<li><p>Data kurang dari <span class="math notranslate nohighlight">\( &lt; 1.4 \)</span></p></li>
+<li><p>Data kurang dari <span class="math notranslate nohighlight">\( &gt;= 1.4 \)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count Entropy for the target given a split value, split value = 0.7</span>
+<span class="n">entropy_data_target_2</span> <span class="o">=</span> <span class="n">info</span><span class="p">(</span><span class="n">split</span><span class="p">(</span><span class="mf">1.4</span><span class="p">,</span> <span class="n">target_data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">target_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">target_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><strong>Entropy uji coba 3</strong></p></li>
+<li><p>Nilai <em>split</em> yaitu <span class="math notranslate nohighlight">\( 2.1 \)</span></p></li>
+<li><p>Data kurang dari <span class="math notranslate nohighlight">\( &lt; 2.1 \)</span></p></li>
+<li><p>Data kurang dari <span class="math notranslate nohighlight">\( &gt;= 2.1 \)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># count Entropy for the target given a split value, split value = 0.7</span>
+<span class="n">entropy_data_target_3</span> <span class="o">=</span> <span class="n">info</span><span class="p">(</span><span class="n">split</span><span class="p">(</span><span class="mf">2.1</span><span class="p">,</span> <span class="n">target_data</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">target_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">target_data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">target_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(Gain(E_{new}) = (E_{initial}) \ - (E_{target\ data\ 1})\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># information gain (entropy data target and entropy_data_target_1)</span>
@@ -3237,6 +3386,34 @@ Name: petal.length, dtype: int64
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9182958340544896
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(Gain(E_{new}) = (E_{initial}) \ - (E_{target\ data\ 2})\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># information gain (entropy data target and entropy_data_target_2)</span>
+<span class="n">count_gain</span><span class="p">(</span><span class="n">initial_data_target_entropy</span><span class="p">,</span> <span class="n">entropy_data_target_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6536600192724277
+</pre></div>
+</div>
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(Gain(E_{new}) = (E_{initial}) \ - (E_{target\ data\ 3})\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># information gain (entropy data target and entropy_data_target_3)</span>
+<span class="n">count_gain</span><span class="p">(</span><span class="n">initial_data_target_entropy</span><span class="p">,</span> <span class="n">entropy_data_target_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2985203537604644
 </pre></div>
 </div>
 </div>
