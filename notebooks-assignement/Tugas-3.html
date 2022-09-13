@@ -394,27 +394,22 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Implementasi K-NN Algorithm (Tugas 3)
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#baca-data">
    Baca Data
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#persiapan-lingkungan">
      Persiapan Lingkungan
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hitung-data">
      Hitung Data
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kesimpulan">
      Kesimpulan
     </a>
@@ -440,27 +435,22 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Implementasi K-NN Algorithm (Tugas 3)
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#baca-data">
    Baca Data
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#persiapan-lingkungan">
      Persiapan Lingkungan
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#hitung-data">
      Hitung Data
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#kesimpulan">
      Kesimpulan
     </a>
@@ -477,21 +467,20 @@ title="Print to PDF"
                 
               <div>
                 
-  <section id="implementasi-k-nn-algorithm-tugas-3">
+  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-k-nn-algorithm-tugas-3">
 <h1>Implementasi K-NN Algorithm (Tugas 3)<a class="headerlink" href="#implementasi-k-nn-algorithm-tugas-3" title="Permalink to this headline">#</a></h1>
 <ol class="simple">
 <li><p>Baca data bunga <em>iris</em></p></li>
 <li><p>Implementasi algoritma K-NN untuk mencari kelas dari data tes</p></li>
 </ol>
-</section>
 <section id="baca-data">
-<h1>Baca Data<a class="headerlink" href="#baca-data" title="Permalink to this headline">#</a></h1>
+<h2>Baca Data<a class="headerlink" href="#baca-data" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Baca data dengan <em>library pandas</em></p></li>
+<li><p>Baca data dengan <em>library pandas</em> <em>italicized text</em></p></li>
 <li><p>Data <a class="reference external" href="https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv">Bunga Iris</a></p></li>
 </ul>
 <section id="persiapan-lingkungan">
-<h2>Persiapan Lingkungan<a class="headerlink" href="#persiapan-lingkungan" title="Permalink to this headline">#</a></h2>
+<h3>Persiapan Lingkungan<a class="headerlink" href="#persiapan-lingkungan" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Impor <em>train_test_split</em> dari <em>sklearn</em></p></li>
 <li><p>Impor <em>KNeighborsClassifier</em> dari <em>sklearn</em></p></li>
@@ -534,7 +523,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-a72d464b-0806-4e9c-bb37-5a9322c75511">
+  <div id="df-d3dc826a-ef4f-471d-9a74-17d69f2101f9">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -605,7 +594,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-a72d464b-0806-4e9c-bb37-5a9322c75511')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-d3dc826a-ef4f-471d-9a74-17d69f2101f9')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -656,12 +645,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-a72d464b-0806-4e9c-bb37-5a9322c75511 button.colab-df-convert');
+          document.querySelector('#df-d3dc826a-ef4f-471d-9a74-17d69f2101f9 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-a72d464b-0806-4e9c-bb37-5a9322c75511');
+          const element = document.querySelector('#df-d3dc826a-ef4f-471d-9a74-17d69f2101f9');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -697,7 +686,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="hitung-data">
-<h2>Hitung Data<a class="headerlink" href="#hitung-data" title="Permalink to this headline">#</a></h2>
+<h3>Hitung Data<a class="headerlink" href="#hitung-data" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Pisahkan kolom “variety” dari <em>dataframe</em></p></li>
 <li><p>Ambil kolom “variety” sebagai target kolom untuk kategori kelas</p></li>
@@ -726,7 +715,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d1d3d4fe-1608-4cb0-92ec-6ddae9f91586">
+  <div id="df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -791,7 +780,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d1d3d4fe-1608-4cb0-92ec-6ddae9f91586')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -842,12 +831,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d1d3d4fe-1608-4cb0-92ec-6ddae9f91586 button.colab-df-convert');
+          document.querySelector('#df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d1d3d4fe-1608-4cb0-92ec-6ddae9f91586');
+          const element = document.querySelector('#df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -954,7 +943,7 @@ title="Print to PDF"
 </div>
 </section>
 <section id="kesimpulan">
-<h2>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this headline">#</a></h2>
+<h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Dataset bunga <em>iris</em> terdiri dari 150 data</p></li>
 <li><p>Ambil 80% dari <em>iris dataset</em> sebagai data latih</p></li>
@@ -969,6 +958,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Dengan akurasi data yaitu <span class="math notranslate nohighlight">\( 0.967\% \)</span></p></li>
 </ul>
+</section>
 </section>
 </section>
 
