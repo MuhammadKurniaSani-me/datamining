@@ -523,7 +523,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-d3dc826a-ef4f-471d-9a74-17d69f2101f9">
+  <div id="df-2347b567-b867-45f7-9fa0-f5722f761289">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -594,7 +594,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-d3dc826a-ef4f-471d-9a74-17d69f2101f9')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2347b567-b867-45f7-9fa0-f5722f761289')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -645,12 +645,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-d3dc826a-ef4f-471d-9a74-17d69f2101f9 button.colab-df-convert');
+          document.querySelector('#df-2347b567-b867-45f7-9fa0-f5722f761289 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-d3dc826a-ef4f-471d-9a74-17d69f2101f9');
+          const element = document.querySelector('#df-2347b567-b867-45f7-9fa0-f5722f761289');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -715,7 +715,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9">
+  <div id="df-fef0996a-25a2-4921-92e8-44ff1a795933">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -780,7 +780,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-fef0996a-25a2-4921-92e8-44ff1a795933')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -831,12 +831,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9 button.colab-df-convert');
+          document.querySelector('#df-fef0996a-25a2-4921-92e8-44ff1a795933 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-0c9c16e9-3579-477d-819b-ddd2ba0d74f9');
+          const element = document.querySelector('#df-fef0996a-25a2-4921-92e8-44ff1a795933');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -873,7 +873,15 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># percent_amount_of_test_data = / HUNDRED_PERCENT</span>
+<span class="n">percent_amount_of_test_data</span> <span class="o">=</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -887,8 +895,15 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amount_of_neighbor</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the classifier to the data</span>
-<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">amount_of_neighbor</span><span class="p">)</span>
 
 <span class="c1"># create train data</span>
 <span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
@@ -896,7 +911,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=10)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=3)
 </pre></div>
 </div>
 </div>
@@ -911,13 +926,17 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#show first 5 model predictions on the test data</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Virginica&#39;, &#39;Setosa&#39;, &#39;Versicolor&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
-       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;], dtype=object)
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;, &#39;Setosa&#39;,
+       &#39;Versicolor&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;, &#39;Virginica&#39;, &#39;Setosa&#39;,
+       &#39;Virginica&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
