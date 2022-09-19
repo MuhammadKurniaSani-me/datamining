@@ -478,6 +478,7 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Baca data dengan <em>library pandas</em> <em>italicized text</em></p></li>
 <li><p>Data <a class="reference external" href="https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv">Bunga Iris</a></p></li>
+<li><p>Referensi <a class="reference external" href="https://docs.google.com/spreadsheets/d/1D0TOWmwVZpA1Wt7e_PrHWAeUlVXRuj2Y/edit?usp=sharing&amp;ouid=104778244268493691619&amp;rtpof=true&amp;sd=true">Hitung Manual</a></p></li>
 </ul>
 <section id="persiapan-lingkungan">
 <h3>Persiapan Lingkungan<a class="headerlink" href="#persiapan-lingkungan" title="Permalink to this headline">#</a></h3>
@@ -488,7 +489,7 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span><span class="c1">#split dataset into train and test data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> <span class="c1">#split dataset into train and test data</span>
 </pre></div>
 </div>
 </div>
@@ -509,6 +510,14 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="ne">UserWarning</span><span class="p">,</span> <span class="n">append</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv&quot;</span>
 </pre></div>
 </div>
@@ -523,7 +532,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-2347b567-b867-45f7-9fa0-f5722f761289">
+  <div id="df-8e02fd6e-c720-4303-9bdc-25d29fde4422">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -594,7 +603,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2347b567-b867-45f7-9fa0-f5722f761289')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-8e02fd6e-c720-4303-9bdc-25d29fde4422')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -645,12 +654,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-2347b567-b867-45f7-9fa0-f5722f761289 button.colab-df-convert');
+          document.querySelector('#df-8e02fd6e-c720-4303-9bdc-25d29fde4422 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2347b567-b867-45f7-9fa0-f5722f761289');
+          const element = document.querySelector('#df-8e02fd6e-c720-4303-9bdc-25d29fde4422');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -715,7 +724,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-fef0996a-25a2-4921-92e8-44ff1a795933">
+  <div id="df-098bcfc8-5252-4a9a-b98a-a57ec3c26b29">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -780,7 +789,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-fef0996a-25a2-4921-92e8-44ff1a795933')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-098bcfc8-5252-4a9a-b98a-a57ec3c26b29')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -831,12 +840,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-fef0996a-25a2-4921-92e8-44ff1a795933 button.colab-df-convert');
+          document.querySelector('#df-098bcfc8-5252-4a9a-b98a-a57ec3c26b29 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-fef0996a-25a2-4921-92e8-44ff1a795933');
+          const element = document.querySelector('#df-098bcfc8-5252-4a9a-b98a-a57ec3c26b29');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -926,7 +935,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#show first 5 model predictions on the test data</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">30</span><span class="p">]</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -956,6 +965,27 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9666666666666667
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Cek sebuah data dengan nilai</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom value to predict</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">5.5</span><span class="p">,</span>	<span class="mi">3</span><span class="p">,</span>	<span class="mi">5</span><span class="p">,</span>	<span class="mf">2.2</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Virginica&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
