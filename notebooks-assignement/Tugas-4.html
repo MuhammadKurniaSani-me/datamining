@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Implementasi K-NN Algorithm (Tugas 3) &#8212; Notebook Tasks</title>
+    <title>Implementasi Naive Bayes (Tugas 4) &#8212; Notebook Tasks</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,12 +50,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Latihan 1" href="../notebooks-exercise/Latihan-1.html" />
-    <link rel="prev" title="Diskritisasi (Tugas 2)" href="Tugas-2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -142,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tugas
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas-1.html">
    Dissimilarity (Tugas 1)
@@ -153,8 +149,8 @@ const thebe_selector_output = ".output, .cell_output"
    Diskritisasi (Tugas 2)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas-3.html">
    Implementasi K-NN Algorithm (Tugas 3)
   </a>
  </li>
@@ -229,7 +225,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/Tugas-3.ipynb"
+        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/Tugas-4.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -247,7 +243,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/Tugas-3.ipynb"
+        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/Tugas-4.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -307,7 +303,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/Tugas-3.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/Tugas-4.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -335,7 +331,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks-assignement/Tugas-3.ipynb"
+        <a href="../_sources/notebooks-assignement/Tugas-4.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -409,11 +405,6 @@ title="Print to PDF"
      Hitung Data
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kesimpulan">
-     Kesimpulan
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -425,7 +416,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Implementasi K-NN Algorithm (Tugas 3)</h1>
+                <h1>Implementasi Naive Bayes  (Tugas 4)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -450,11 +441,6 @@ title="Print to PDF"
      Hitung Data
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#kesimpulan">
-     Kesimpulan
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -467,18 +453,17 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-k-nn-algorithm-tugas-3">
-<h1>Implementasi K-NN Algorithm (Tugas 3)<a class="headerlink" href="#implementasi-k-nn-algorithm-tugas-3" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-naive-bayes-tugas-4">
+<h1>Implementasi Naive Bayes  (Tugas 4)<a class="headerlink" href="#implementasi-naive-bayes-tugas-4" title="Permalink to this headline">#</a></h1>
 <ol class="simple">
 <li><p>Baca data bunga <em>iris</em></p></li>
-<li><p>Implementasi algoritma K-NN untuk mencari kelas dari data tes</p></li>
+<li><p>Implementasi algoritma Naive Bayes Gaussian untuk menentukan probabilitas kelas dari data tes</p></li>
 </ol>
 <section id="baca-data">
 <h2>Baca Data<a class="headerlink" href="#baca-data" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Baca data dengan <em>library pandas</em> <em>italicized text</em></p></li>
 <li><p>Data <a class="reference external" href="https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv">Bunga Iris</a></p></li>
-<li><p>Referensi <a class="reference external" href="https://docs.google.com/spreadsheets/d/1D0TOWmwVZpA1Wt7e_PrHWAeUlVXRuj2Y/edit?usp=sharing&amp;ouid=104778244268493691619&amp;rtpof=true&amp;sd=true">Hitung Manual</a></p></li>
 </ul>
 <section id="persiapan-lingkungan">
 <h3>Persiapan Lingkungan<a class="headerlink" href="#persiapan-lingkungan" title="Permalink to this headline">#</a></h3>
@@ -496,14 +481,25 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span><span class="c1"># Create KNN classifier</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># library for Naive Bayes Gaussian</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span><span class="n">precision_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span><span class="n">recall_score</span><span class="p">,</span><span class="n">f1_score</span>
+
+<span class="c1">#Model Select</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
 </pre></div>
 </div>
 </div>
@@ -532,7 +528,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e5577754-1e82-431d-8d77-98a2feeb596b">
+  <div id="df-5eb0a66b-6a5d-4c8a-8f2d-03a0dbbfb769">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -603,7 +599,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-e5577754-1e82-431d-8d77-98a2feeb596b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-5eb0a66b-6a5d-4c8a-8f2d-03a0dbbfb769')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -654,12 +650,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-e5577754-1e82-431d-8d77-98a2feeb596b button.colab-df-convert');
+          document.querySelector('#df-5eb0a66b-6a5d-4c8a-8f2d-03a0dbbfb769 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-e5577754-1e82-431d-8d77-98a2feeb596b');
+          const element = document.querySelector('#df-5eb0a66b-6a5d-4c8a-8f2d-03a0dbbfb769');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -724,7 +720,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-22eeae58-1cdb-4ced-81cf-8e113d9bf311">
+  <div id="df-77ffb8d7-8e96-4158-bbb2-5e439ff8d60c">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -789,7 +785,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-22eeae58-1cdb-4ced-81cf-8e113d9bf311')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-77ffb8d7-8e96-4158-bbb2-5e439ff8d60c')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -840,12 +836,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-22eeae58-1cdb-4ced-81cf-8e113d9bf311 button.colab-df-convert');
+          document.querySelector('#df-77ffb8d7-8e96-4158-bbb2-5e439ff8d60c button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-22eeae58-1cdb-4ced-81cf-8e113d9bf311');
+          const element = document.querySelector('#df-77ffb8d7-8e96-4158-bbb2-5e439ff8d60c');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -868,14 +864,68 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># separate target values</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;variety&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># view target values</span>
-<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;], dtype=object)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">NameError</span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="n">dc7cdd411eab</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">y</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># separate target </span>
+
+<span class="c1"># values</span>
+<span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+<span class="c1"># classes</span>
+<span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
+       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;,
+       &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;,
+       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;], dtype=object)
 </pre></div>
 </div>
 </div>
@@ -883,130 +933,72 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># percent_amount_of_test_data = / HUNDRED_PERCENT</span>
-<span class="n">percent_amount_of_test_data</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">percent_amount_of_test_data</span> <span class="o">=</span> <span class="mf">0.3</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Tentukan nilai K = 10 (10 tetangga terdekat)</p></li>
-<li><p>Buat data latih</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amount_of_neighbor</span> <span class="o">=</span> <span class="mi">3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the classifier to the data</span>
-<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">amount_of_neighbor</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gaussian</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">gaussian</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">Y_pred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
+<span class="n">accuracy_nb</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span><span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">acc_gaussian</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">gaussian</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># create train data</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
+<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">Y_pred</span><span class="p">)</span>
+<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span>
+<span class="n">precision</span> <span class="o">=</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">Y_pred</span><span class="p">,</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">)</span>
+<span class="n">recall</span> <span class="o">=</span>  <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">Y_pred</span><span class="p">,</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">,</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confusion matrix for Naive Bayes</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">cm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;accuracy_Naive Bayes: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">accuracy</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision_Naive Bayes: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">precision</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall_Naive Bayes: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">recall</span>)
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1-score_random_Forest : </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">f1</span>)
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=3)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confusion matrix for Naive Bayes
+ [[16  0  0]
+ [ 0 18  0]
+ [ 0  0 11]]
+accuracy_Naive Bayes: 1.000
+precision_Naive Bayes: 1.000
+recall_Naive Bayes: 1.000
+f1-score_random_Forest : 1.000
 </pre></div>
 </div>
 </div>
-</div>
-<ul class="simple">
-<li><p>Tes data target terhadap data latih</p></li>
-<li><p>Tampilkan predksi 10 data pertama</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
-</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#show first 5 model predictions on the test data</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">GaussianNB</span><span class="p">()</span>
+<span class="c1"># print(clf.predict([[-0.8, -1]]))</span>
+<span class="n">clf_pf</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
+<span class="n">clf_pf</span><span class="o">.</span><span class="n">partial_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<span class="n">GaussianNB</span><span class="p">()</span>
+<span class="c1"># print(clf_pf.predict([[4, 3, 5, 1.2]]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">clf_pf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">]]))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Virginica&#39;, &#39;Setosa&#39;, &#39;Versicolor&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;,
-       &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;, &#39;Setosa&#39;,
-       &#39;Versicolor&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;, &#39;Virginica&#39;, &#39;Setosa&#39;,
-       &#39;Virginica&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;,
-       &#39;Versicolor&#39;, &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Virginica&#39;, &#39;Versicolor&#39;,
-       &#39;Setosa&#39;, &#39;Setosa&#39;, &#39;Versicolor&#39;, &#39;Versicolor&#39;], dtype=object)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Versicolor&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Cetak prediksi nilai dari data tes</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check accuracy of our model on the test data</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.9666666666666667
-</pre></div>
-</div>
-</div>
-</div>
-<ul class="simple">
-<li><p>Cek sebuah data dengan nilai</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-    <span class="p">[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">]</span>
-<span class="p">]</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom value to predict</span>
-<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">5.5</span><span class="p">,</span>	<span class="mi">3</span><span class="p">,</span>	<span class="mi">5</span><span class="p">,</span>	<span class="mf">2.2</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;Virginica&#39;], dtype=object)
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="kesimpulan">
-<h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this headline">#</a></h3>
-<ul class="simple">
-<li><p>Dataset bunga <em>iris</em> terdiri dari 150 data</p></li>
-<li><p>Ambil 80% dari <em>iris dataset</em> sebagai data latih</p></li>
-<li><p>Ambil 20% dari <em>iris dataset</em> sebagai data tes</p></li>
-<li><p>Tetapkan nilai K = 10</p></li>
-<li><p>Hasil 10 data pertama dari 20% data latih</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s1">&#39;Virginica&#39;</span><span class="p">,</span> <span class="s1">&#39;Setosa&#39;</span><span class="p">,</span> <span class="s1">&#39;Versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;Setosa&#39;</span><span class="p">,</span> <span class="s1">&#39;Setosa&#39;</span><span class="p">,</span> <span class="s1">&#39;Setosa&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;Virginica&#39;</span><span class="p">,</span> <span class="s1">&#39;Virginica&#39;</span><span class="p">,</span> <span class="s1">&#39;Virginica&#39;</span><span class="p">,</span> <span class="s1">&#39;Versicolor&#39;</span><span class="p">]</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Dengan akurasi data yaitu <span class="math notranslate nohighlight">\( 0.967\% \)</span></p></li>
-</ul>
 </section>
 </section>
 </section>
@@ -1038,20 +1030,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Tugas-2.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Diskritisasi (Tugas 2)</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../notebooks-exercise/Latihan-1.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Latihan 1</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
