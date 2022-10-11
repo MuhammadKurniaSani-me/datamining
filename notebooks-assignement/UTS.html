@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Implementasi Naive Bayes (Tugas 4) &#8212; Data Mining</title>
+    <title>Analisis Data dengan KNN dan Decision Tree (UTS) &#8212; Data Mining</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Implementasi K-Means Clustering (Tugas 5)" href="Tugas-5.html" />
-    <link rel="prev" title="Implementasi K-NN Algorithm (Tugas 3)" href="Tugas-3.html" />
+    <link rel="prev" title="Implementasi K-Means Clustering (Tugas 5)" href="Tugas-5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -146,8 +147,8 @@ const thebe_selector_output = ".output, .cell_output"
    Implementasi K-NN Algorithm (Tugas 3)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas-4.html">
    Implementasi Naive Bayes  (Tugas 4)
   </a>
  </li>
@@ -156,8 +157,8 @@ const thebe_selector_output = ".output, .cell_output"
    Implementasi K-Means Clustering (Tugas 5)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="UTS.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Analisis Data dengan KNN dan Decision Tree (UTS)
   </a>
  </li>
@@ -220,7 +221,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/Tugas-4.ipynb"
+        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/UTS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -238,7 +239,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/Tugas-4.ipynb"
+        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/UTS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -298,7 +299,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/Tugas-4.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/UTS.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -326,7 +327,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks-assignement/Tugas-4.ipynb"
+        <a href="../_sources/notebooks-assignement/UTS.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -386,41 +387,10 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#baca-data">
-   Baca Data
+  <a class="reference internal nav-link" href="#implementasi-k-nn-algorithm">
+   Implementasi K-NN Algorithm
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#persiapan-lingkungan">
-     Persiapan Lingkungan
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#hitung-data">
-     Hitung Data
-    </a>
-   </li>
-  </ul>
  </li>
-</ul>
-
-    </nav>
-</div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Implementasi Naive Bayes  (Tugas 4)</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#baca-data">
    Baca Data
@@ -436,7 +406,68 @@ title="Print to PDF"
      Hitung Data
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kesimpulan">
+     Kesimpulan
+    </a>
+   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementasi-decision-tree">
+   Implementasi Decision Tree
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Analisis Data dengan KNN dan Decision Tree (UTS)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementasi-k-nn-algorithm">
+   Implementasi K-NN Algorithm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#baca-data">
+   Baca Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#persiapan-lingkungan">
+     Persiapan Lingkungan
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hitung-data">
+     Hitung Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#kesimpulan">
+     Kesimpulan
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#implementasi-decision-tree">
+   Implementasi Decision Tree
+  </a>
  </li>
 </ul>
 
@@ -448,18 +479,21 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-naive-bayes-tugas-4">
-<h1>Implementasi Naive Bayes  (Tugas 4)<a class="headerlink" href="#implementasi-naive-bayes-tugas-4" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-data-dengan-knn-dan-decision-tree-uts">
+<h1>Analisis Data dengan KNN dan Decision Tree (UTS)<a class="headerlink" href="#analisis-data-dengan-knn-dan-decision-tree-uts" title="Permalink to this headline">#</a></h1>
+<section id="implementasi-k-nn-algorithm">
+<h2>Implementasi K-NN Algorithm<a class="headerlink" href="#implementasi-k-nn-algorithm" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
-<li><p>Baca data bunga <em>iris</em></p></li>
-<li><p>Implementasi algoritma Naive Bayes Gaussian untuk menentukan probabilitas kelas dari data tes</p></li>
+<li><p>Baca data bunga Breast Cancer Coimbra</p></li>
+<li><p>Implementasi algoritma K-NN untuk mencari kelas dari data tes</p></li>
 </ol>
+</section>
 <section id="baca-data">
 <h2>Baca Data<a class="headerlink" href="#baca-data" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Baca data dengan <em>library pandas</em> <em>italicized text</em></p></li>
-<li><p>Data <a class="reference external" href="https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv">Bunga Iris</a></p></li>
-<li><p>Data <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Hr2LPptj5niQCBXm3cUG4dSxTow0J9FY/edit?usp=sharing&amp;ouid=104778244268493691619&amp;rtpof=true&amp;sd=true">Hitung Manual</a></p></li>
+<li><p>Data <a class="reference external" href="https://raw.githubusercontent.com/MuhammadKurniaSani-me/Breast-Cancer-Coimbra/main/dataR2.csv">Breast Cancer Coimbra</a></p></li>
+<li><p>Referensi <a class="reference external" href="https://docs.google.com/spreadsheets/d/1eDNhWUFN52MYtdndVmYOLg3l0kVGIQzu/edit?usp=sharing&amp;ouid=104778244268493691619&amp;rtpof=true&amp;sd=true">Hitung Manual</a></p></li>
 </ul>
 <section id="persiapan-lingkungan">
 <h3>Persiapan Lingkungan<a class="headerlink" href="#persiapan-lingkungan" title="Permalink to this headline">#</a></h3>
@@ -477,26 +511,14 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span><span class="c1"># Create KNN classifier</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># library for Naive Bayes Gaussian</span>
-<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">make_scorer</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span><span class="n">precision_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">classification_report</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span><span class="p">,</span><span class="n">recall_score</span><span class="p">,</span><span class="n">f1_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
-
-<span class="c1">#Model Select</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 </pre></div>
 </div>
 </div>
@@ -511,7 +533,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/MuhammadKurniaSani-me/Breast-Cancer-Coimbra/main/dataR2.csv&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -525,7 +547,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ceaaeb6a-ad1d-4141-bf2c-c16ffd78e320">
+  <div id="df-ae9dd636-367d-4f60-a06e-c8e6f4966e75">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -545,58 +567,88 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal.length</th>
-      <th>sepal.width</th>
-      <th>petal.length</th>
-      <th>petal.width</th>
-      <th>variety</th>
+      <th>Age</th>
+      <th>BMI</th>
+      <th>Glucose</th>
+      <th>Insulin</th>
+      <th>HOMA</th>
+      <th>Leptin</th>
+      <th>Adiponectin</th>
+      <th>Resistin</th>
+      <th>MCP.1</th>
+      <th>Classification</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Setosa</td>
+      <td>48</td>
+      <td>23.500000</td>
+      <td>70</td>
+      <td>2.707</td>
+      <td>0.467409</td>
+      <td>8.8071</td>
+      <td>9.702400</td>
+      <td>7.99585</td>
+      <td>417.114</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Setosa</td>
+      <td>83</td>
+      <td>20.690495</td>
+      <td>92</td>
+      <td>3.115</td>
+      <td>0.706897</td>
+      <td>8.8438</td>
+      <td>5.429285</td>
+      <td>4.06405</td>
+      <td>468.786</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
-      <td>Setosa</td>
+      <td>82</td>
+      <td>23.124670</td>
+      <td>91</td>
+      <td>4.498</td>
+      <td>1.009651</td>
+      <td>17.9393</td>
+      <td>22.432040</td>
+      <td>9.27715</td>
+      <td>554.697</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
-      <td>Setosa</td>
+      <td>68</td>
+      <td>21.367521</td>
+      <td>77</td>
+      <td>3.226</td>
+      <td>0.612725</td>
+      <td>9.8827</td>
+      <td>7.169560</td>
+      <td>12.76600</td>
+      <td>928.220</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
-      <td>Setosa</td>
+      <td>86</td>
+      <td>21.111111</td>
+      <td>92</td>
+      <td>3.549</td>
+      <td>0.805386</td>
+      <td>6.6994</td>
+      <td>4.819240</td>
+      <td>10.57635</td>
+      <td>773.920</td>
+      <td>1</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ceaaeb6a-ad1d-4141-bf2c-c16ffd78e320')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ae9dd636-367d-4f60-a06e-c8e6f4966e75')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -647,12 +699,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ceaaeb6a-ad1d-4141-bf2c-c16ffd78e320 button.colab-df-convert');
+          document.querySelector('#df-ae9dd636-367d-4f60-a06e-c8e6f4966e75 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ceaaeb6a-ad1d-4141-bf2c-c16ffd78e320');
+          const element = document.querySelector('#df-ae9dd636-367d-4f60-a06e-c8e6f4966e75');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -681,7 +733,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(150, 5)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(116, 10)
 </pre></div>
 </div>
 </div>
@@ -710,14 +762,14 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#create a dataframe with all training data except the target column</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;variety&quot;</span><span class="p">])</span><span class="c1">#check that the target variable has been removed</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Classification&quot;</span><span class="p">])</span><span class="c1">#check that the target variable has been removed</span>
 <span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-8f874d96-4a18-490d-94f7-a509aa42c43d">
+  <div id="df-e61a324b-1608-4352-9995-d6edaf3baac2">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -737,52 +789,82 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>sepal.length</th>
-      <th>sepal.width</th>
-      <th>petal.length</th>
-      <th>petal.width</th>
+      <th>Age</th>
+      <th>BMI</th>
+      <th>Glucose</th>
+      <th>Insulin</th>
+      <th>HOMA</th>
+      <th>Leptin</th>
+      <th>Adiponectin</th>
+      <th>Resistin</th>
+      <th>MCP.1</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>5.1</td>
-      <td>3.5</td>
-      <td>1.4</td>
-      <td>0.2</td>
+      <td>48</td>
+      <td>23.500000</td>
+      <td>70</td>
+      <td>2.707</td>
+      <td>0.467409</td>
+      <td>8.8071</td>
+      <td>9.702400</td>
+      <td>7.99585</td>
+      <td>417.114</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>4.9</td>
-      <td>3.0</td>
-      <td>1.4</td>
-      <td>0.2</td>
+      <td>83</td>
+      <td>20.690495</td>
+      <td>92</td>
+      <td>3.115</td>
+      <td>0.706897</td>
+      <td>8.8438</td>
+      <td>5.429285</td>
+      <td>4.06405</td>
+      <td>468.786</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>4.7</td>
-      <td>3.2</td>
-      <td>1.3</td>
-      <td>0.2</td>
+      <td>82</td>
+      <td>23.124670</td>
+      <td>91</td>
+      <td>4.498</td>
+      <td>1.009651</td>
+      <td>17.9393</td>
+      <td>22.432040</td>
+      <td>9.27715</td>
+      <td>554.697</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>4.6</td>
-      <td>3.1</td>
-      <td>1.5</td>
-      <td>0.2</td>
+      <td>68</td>
+      <td>21.367521</td>
+      <td>77</td>
+      <td>3.226</td>
+      <td>0.612725</td>
+      <td>9.8827</td>
+      <td>7.169560</td>
+      <td>12.76600</td>
+      <td>928.220</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>5.0</td>
-      <td>3.6</td>
-      <td>1.4</td>
-      <td>0.2</td>
+      <td>86</td>
+      <td>21.111111</td>
+      <td>92</td>
+      <td>3.549</td>
+      <td>0.805386</td>
+      <td>6.6994</td>
+      <td>4.819240</td>
+      <td>10.57635</td>
+      <td>773.920</td>
     </tr>
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8f874d96-4a18-490d-94f7-a509aa42c43d')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-e61a324b-1608-4352-9995-d6edaf3baac2')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -833,12 +915,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-8f874d96-4a18-490d-94f7-a509aa42c43d button.colab-df-convert');
+          document.querySelector('#df-e61a324b-1608-4352-9995-d6edaf3baac2 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8f874d96-4a18-490d-94f7-a509aa42c43d');
+          const element = document.querySelector('#df-e61a324b-1608-4352-9995-d6edaf3baac2');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -861,110 +943,185 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># separate target values</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Classification&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>  <span class="c1"># view target values</span>
+<span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># percent_amount_of_test_data = / HUNDRED_PERCENT</span>
-<span class="n">percent_amount_of_test_data</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">percent_amount_of_test_data</span> <span class="o">=</span> <span class="mf">0.2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># separate target </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Tentukan nilai K = 10 (10 tetangga terdekat)</p></li>
+<li><p>Buat data latih</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amount_of_neighbor</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit the classifier to the data</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">amount_of_neighbor</span><span class="p">)</span>
 
-<span class="c1"># values</span>
-<span class="n">X</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-
-<span class="c1"># classes</span>
-<span class="n">y</span><span class="o">=</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">4</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># classifier</span>
-<span class="n">gaussian</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="c1"># </span>
-<span class="n">gaussian</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">Y_pred</span> <span class="o">=</span> <span class="n">gaussian</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> 
-<span class="n">accuracy_nb</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span><span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">acc_gaussian</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">gaussian</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="n">cm</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">Y_pred</span><span class="p">)</span>
-<span class="n">accuracy</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">)</span>
-<span class="n">precision</span> <span class="o">=</span><span class="n">precision_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">Y_pred</span><span class="p">,</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">)</span>
-<span class="n">recall</span> <span class="o">=</span>  <span class="n">recall_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">Y_pred</span><span class="p">,</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">)</span>
-<span class="n">f1</span> <span class="o">=</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">Y_pred</span><span class="p">,</span><span class="n">average</span><span class="o">=</span><span class="s1">&#39;micro&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Confusion matrix for Naive Bayes</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">cm</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;accuracy_Naive Bayes: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">accuracy</span>)
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;precision_Naive Bayes: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">precision</span>)
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;recall_Naive Bayes: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">recall</span>)
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;f1-score_random_Forest : </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="k">f1</span>)
+<span class="c1"># create train data</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Confusion matrix for Naive Bayes
- [[16  0  0]
- [ 0 18  0]
- [ 0  0 11]]
-accuracy_Naive Bayes: 1.000
-precision_Naive Bayes: 1.000
-recall_Naive Bayes: 1.000
-f1-score_random_Forest : 1.000
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=10)
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Tes data target terhadap data latih</p></li>
+<li><p>Tampilkan predksi 10 data pertama</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#show first 5 model predictions on the test data</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
+       1, 2])
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Cetak prediksi nilai dari data tes</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#check accuracy of our model on the test data</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Cek sebuah data dengan nilai</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test Data (1)</span>
+<span class="p">[</span>
+    <span class="p">[</span>
+        <span class="mi">45</span><span class="p">,</span> 
+        <span class="mf">21.30394858</span><span class="p">,</span> 
+        <span class="mi">102</span><span class="p">,</span> 
+        <span class="mf">13.852</span><span class="p">,</span> 
+        <span class="mf">3.4851632</span><span class="p">,</span> 
+        <span class="mf">7.6476</span><span class="p">,</span> 
+        <span class="mf">21.056625</span><span class="p">,</span> 
+        <span class="mf">23.03408</span><span class="p">,</span>	
+        <span class="mf">552.444</span>
+    <span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom value to predict (1) based on manual calculation</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">45</span><span class="p">,</span> <span class="mf">21.30394858</span><span class="p">,</span> <span class="mi">102</span><span class="p">,</span> <span class="mf">13.852</span><span class="p">,</span> <span class="mf">3.4851632</span><span class="p">,</span> <span class="mf">7.6476</span><span class="p">,</span> <span class="mf">21.056625</span><span class="p">,</span> <span class="mf">23.03408</span><span class="p">,</span>	<span class="mf">552.444</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-<span class="n">clf_pf</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">clf_pf</span><span class="o">.</span><span class="n">partial_fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom value to predict (2)</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">72</span><span class="p">,</span><span class="mf">25.59</span><span class="p">,</span><span class="mi">82</span><span class="p">,</span><span class="mf">2.82</span><span class="p">,</span><span class="mf">0.570392</span><span class="p">,</span><span class="mf">24.96</span><span class="p">,</span><span class="mf">33.75</span><span class="p">,</span><span class="mf">3.27</span><span class="p">,</span><span class="mf">392.46</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB()
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># try with value [5.5, 3, 5, 2.2]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">clf_pf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mf">5.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">2.2</span><span class="p">]]))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom value to predict (3) based on manual calculation</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">20</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span>   <span class="mi">79</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span>     <span class="mi">25</span><span class="p">,</span>   <span class="mi">32</span><span class="p">,</span>   <span class="mf">3.1</span><span class="p">,</span> <span class="mi">393</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Virginica&#39;]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># try with value [4, 3, 5, 1.2]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">clf_pf</span><span class="o">.</span><span class="n">predict</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">]]))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Versicolor&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1])
 </pre></div>
 </div>
 </div>
 </div>
 </section>
+<section id="kesimpulan">
+<h3>Kesimpulan<a class="headerlink" href="#kesimpulan" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Dataset Breast Cancer Combria terdiri dari 116 data</p></li>
+<li><p>Ambil <strong>80%</strong> dari data Breast Cancer Combria sebagai <strong>data latih</strong></p></li>
+<li><p>Ambil <strong>20%</strong> dari data Breast Cancer Combria sebagai <strong>data tes</strong></p></li>
+<li><p>Tetapkan nilai K = 10</p></li>
+<li><p>Hasil 10 data pertama dari 20% data latih</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">1 = Healthy controls </span>
+<span class="sd">2 = Patients</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Dengan akurasi data yaitu <span class="math notranslate nohighlight">\( 0.5\% \)</span></p></li>
+</ul>
+</section>
+</section>
+<section id="implementasi-decision-tree">
+<h2>Implementasi Decision Tree<a class="headerlink" href="#implementasi-decision-tree" title="Permalink to this headline">#</a></h2>
 </section>
 </section>
 
@@ -995,19 +1152,12 @@ f1-score_random_Forest : 1.000
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Tugas-3.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Tugas-5.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Implementasi K-NN Algorithm (Tugas 3)</p>
+            <p class="prev-next-title">Implementasi K-Means Clustering (Tugas 5)</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="Tugas-5.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Implementasi K-Means Clustering (Tugas 5)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

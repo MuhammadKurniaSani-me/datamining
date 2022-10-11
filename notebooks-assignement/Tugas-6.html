@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Implementasi K-Means Clustering (Tugas 5) &#8212; Data Mining</title>
+    <title>Implementasi Decision Tree (Tugas 6) &#8212; Data Mining</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Analisis Data dengan KNN dan Decision Tree (UTS)" href="UTS.html" />
-    <link rel="prev" title="Implementasi Naive Bayes (Tugas 4)" href="Tugas-4.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -130,7 +128,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tugas
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas-1.html">
    Dissimilarity (Tugas 1)
@@ -151,8 +149,8 @@ const thebe_selector_output = ".output, .cell_output"
    Implementasi Naive Bayes  (Tugas 4)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas-5.html">
    Implementasi K-Means Clustering (Tugas 5)
   </a>
  </li>
@@ -220,7 +218,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/Tugas-5.ipynb"
+        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/Tugas-6.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -238,7 +236,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/Tugas-5.ipynb"
+        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/Tugas-6.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -298,7 +296,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/Tugas-5.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/Tugas-6.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -326,7 +324,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks-assignement/Tugas-5.ipynb"
+        <a href="../_sources/notebooks-assignement/Tugas-6.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -411,7 +409,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Implementasi K-Means Clustering (Tugas 5)</h1>
+                <h1>Implementasi Decision Tree (Tugas 6)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -448,11 +446,11 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-k-means-clustering-tugas-5">
-<h1>Implementasi K-Means Clustering (Tugas 5)<a class="headerlink" href="#implementasi-k-means-clustering-tugas-5" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="implementasi-decision-tree-tugas-6">
+<h1>Implementasi Decision Tree (Tugas 6)<a class="headerlink" href="#implementasi-decision-tree-tugas-6" title="Permalink to this headline">#</a></h1>
 <ol class="simple">
 <li><p>Baca data bunga <em>iris</em></p></li>
-<li><p>Implementasi algoritma Naive Bayes Gaussian untuk menentukan probabilitas kelas dari data tes</p></li>
+<li><p>Implementasi Pohon Keputusan untuk menentukan <em>feature</em> yang terbaik</p></li>
 </ol>
 <section id="baca-data">
 <h2>Baca Data<a class="headerlink" href="#baca-data" title="Permalink to this headline">#</a></h2>
@@ -497,7 +495,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-350efe16-2697-4253-8772-47dda7f70262">
+  <div id="df-81ab2ae3-2b95-454d-acd8-465278f0a0ed">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -568,7 +566,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-350efe16-2697-4253-8772-47dda7f70262')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-81ab2ae3-2b95-454d-acd8-465278f0a0ed')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -619,12 +617,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-350efe16-2697-4253-8772-47dda7f70262 button.colab-df-convert');
+          document.querySelector('#df-81ab2ae3-2b95-454d-acd8-465278f0a0ed button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-350efe16-2697-4253-8772-47dda7f70262');
+          const element = document.querySelector('#df-81ab2ae3-2b95-454d-acd8-465278f0a0ed');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -677,7 +675,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-112f32c2-eb4b-456e-8786-af6d8a2ec70f">
+  <div id="df-b92461d0-a880-4573-b4bd-ed8302fe0262">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -785,7 +783,7 @@ title="Print to PDF"
 </table>
 <p>150 rows × 4 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-112f32c2-eb4b-456e-8786-af6d8a2ec70f')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-b92461d0-a880-4573-b4bd-ed8302fe0262')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -836,12 +834,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-112f32c2-eb4b-456e-8786-af6d8a2ec70f button.colab-df-convert');
+          document.querySelector('#df-b92461d0-a880-4573-b4bd-ed8302fe0262 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-112f32c2-eb4b-456e-8786-af6d8a2ec70f');
+          const element = document.querySelector('#df-b92461d0-a880-4573-b4bd-ed8302fe0262');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -921,9 +919,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.14      , 2.36      , 3.32      , 1.02      ],
-       [6.32105263, 2.89894737, 4.98947368, 1.71052632],
-       [5.006     , 3.428     , 1.462     , 0.246     ]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[7.15      , 3.12      , 6.09      , 2.135     ],
+       [5.00784314, 3.40980392, 1.49215686, 0.2627451 ],
+       [6.05189873, 2.81392405, 4.63037975, 1.56708861]])
 </pre></div>
 </div>
 </div>
@@ -943,7 +941,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-6a906173-7db5-49bc-b926-d6c34eebf8b8">
+  <div id="df-4a90facb-0e11-4292-851e-abc95e11a331">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -969,23 +967,23 @@ title="Print to PDF"
   <tbody>
     <tr>
       <th>0</th>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>2</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>...</th>
@@ -993,29 +991,29 @@ title="Print to PDF"
     </tr>
     <tr>
       <th>145</th>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>146</th>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>147</th>
-      <td>1</td>
+      <td>2</td>
     </tr>
     <tr>
       <th>148</th>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>149</th>
-      <td>1</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
 <p>150 rows × 1 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-6a906173-7db5-49bc-b926-d6c34eebf8b8')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4a90facb-0e11-4292-851e-abc95e11a331')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1066,12 +1064,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-6a906173-7db5-49bc-b926-d6c34eebf8b8 button.colab-df-convert');
+          document.querySelector('#df-4a90facb-0e11-4292-851e-abc95e11a331 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-6a906173-7db5-49bc-b926-d6c34eebf8b8');
+          const element = document.querySelector('#df-4a90facb-0e11-4292-851e-abc95e11a331');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1433,7 +1431,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/Tugas-5_18_0.png" src="../_images/Tugas-5_18_0.png" />
+<img alt="../_images/Tugas-6_18_0.png" src="../_images/Tugas-6_18_0.png" />
 </div>
 </div>
 </section>
@@ -1467,20 +1465,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Tugas-4.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Implementasi Naive Bayes  (Tugas 4)</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="UTS.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Analisis Data dengan KNN dan Decision Tree (UTS)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
