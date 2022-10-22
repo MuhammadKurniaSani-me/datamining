@@ -547,7 +547,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ae9dd636-367d-4f60-a06e-c8e6f4966e75">
+  <div id="df-648f7bb1-f1a7-4722-97dd-f8f88e22d94b">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -648,7 +648,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ae9dd636-367d-4f60-a06e-c8e6f4966e75')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-648f7bb1-f1a7-4722-97dd-f8f88e22d94b')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -699,12 +699,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ae9dd636-367d-4f60-a06e-c8e6f4966e75 button.colab-df-convert');
+          document.querySelector('#df-648f7bb1-f1a7-4722-97dd-f8f88e22d94b button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ae9dd636-367d-4f60-a06e-c8e6f4966e75');
+          const element = document.querySelector('#df-648f7bb1-f1a7-4722-97dd-f8f88e22d94b');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -769,7 +769,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-e61a324b-1608-4352-9995-d6edaf3baac2">
+  <div id="df-1631de0b-09f4-4ba6-877c-4c1cb8d13c5a">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -864,7 +864,7 @@ title="Print to PDF"
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-e61a324b-1608-4352-9995-d6edaf3baac2')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-1631de0b-09f4-4ba6-877c-4c1cb8d13c5a')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -915,12 +915,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-e61a324b-1608-4352-9995-d6edaf3baac2 button.colab-df-convert');
+          document.querySelector('#df-1631de0b-09f4-4ba6-877c-4c1cb8d13c5a button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-e61a324b-1608-4352-9995-d6edaf3baac2');
+          const element = document.querySelector('#df-1631de0b-09f4-4ba6-877c-4c1cb8d13c5a');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -971,7 +971,7 @@ title="Print to PDF"
 </div>
 </div>
 <ul class="simple">
-<li><p>Tentukan nilai K = 10 (10 tetangga terdekat)</p></li>
+<li><p>Tentukan nilai K = 15 (15 tetangga terdekat)</p></li>
 <li><p>Buat data latih</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="p">)</span>
@@ -979,7 +979,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amount_of_neighbor</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">amount_of_neighbor</span> <span class="o">=</span> <span class="mi">15</span>
 </pre></div>
 </div>
 </div>
@@ -995,14 +995,13 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=10)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=15)
 </pre></div>
 </div>
 </div>
 </div>
 <ul class="simple">
 <li><p>Tes data target terhadap data latih</p></li>
-<li><p>Tampilkan predksi 10 data pertama</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">knn_classifier</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
 </pre></div>
@@ -1015,8 +1014,8 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2,
-       1, 2])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2])
 </pre></div>
 </div>
 </div>
@@ -1093,7 +1092,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2])
 </pre></div>
 </div>
 </div>
@@ -1105,14 +1104,14 @@ title="Print to PDF"
 <li><p>Dataset Breast Cancer Combria terdiri dari 116 data</p></li>
 <li><p>Ambil <strong>80%</strong> dari data Breast Cancer Combria sebagai <strong>data latih</strong></p></li>
 <li><p>Ambil <strong>20%</strong> dari data Breast Cancer Combria sebagai <strong>data tes</strong></p></li>
-<li><p>Tetapkan nilai K = 10</p></li>
+<li><p>Tetapkan nilai K = 15</p></li>
 <li><p>Hasil 10 data pertama dari 20% data latih</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">1 = Healthy controls </span>
 <span class="sd">2 = Patients</span>
 <span class="sd">&quot;&quot;&quot;</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
 </div>
 <ul class="simple">
