@@ -667,7 +667,7 @@ title="Print to PDF"
 
 <span class="c1">### Modelling </span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
 <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
@@ -751,7 +751,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-ec08ff0f-b95e-4c49-aada-47920a218848">
+  <div id="df-70204d63-dbaf-4719-8b43-ed6adc6fe279">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1051,7 +1051,7 @@ title="Print to PDF"
 </table>
 <p>1151 rows × 20 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-ec08ff0f-b95e-4c49-aada-47920a218848')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-70204d63-dbaf-4719-8b43-ed6adc6fe279')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1102,12 +1102,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-ec08ff0f-b95e-4c49-aada-47920a218848 button.colab-df-convert');
+          document.querySelector('#df-70204d63-dbaf-4719-8b43-ed6adc6fe279 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-ec08ff0f-b95e-4c49-aada-47920a218848');
+          const element = document.querySelector('#df-70204d63-dbaf-4719-8b43-ed6adc6fe279');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1188,7 +1188,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split unnormalized data</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">unnormalized_data</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">unnormalized_data</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1199,7 +1199,7 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># split normalized data</span>
-<span class="n">X_train_norm</span><span class="p">,</span> <span class="n">X_test_norm</span><span class="p">,</span> <span class="n">y_train_norm</span><span class="p">,</span> <span class="n">y_test_norm</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">normalized_dataset</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">X_train_norm</span><span class="p">,</span> <span class="n">X_test_norm</span><span class="p">,</span> <span class="n">y_train_norm</span><span class="p">,</span> <span class="n">y_test_norm</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">normalized_dataset</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="n">percent_amount_of_test_data</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1248,7 +1248,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6277056277056277
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6363636363636364
 </pre></div>
 </div>
 </div>
@@ -1293,7 +1293,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5367965367965368
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.645021645021645
 </pre></div>
 </div>
 </div>
@@ -1354,7 +1354,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5844155844155844
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6320346320346321
 </pre></div>
 </div>
 </div>
@@ -1399,7 +1399,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6493506493506493
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6103896103896104
 </pre></div>
 </div>
 </div>
@@ -1444,7 +1444,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6536796536796536
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.645021645021645
 </pre></div>
 </div>
 </div>
@@ -1489,7 +1489,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6017316017316018
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.683982683982684
 </pre></div>
 </div>
 </div>
@@ -1537,7 +1537,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6060606060606061
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.658008658008658
 </pre></div>
 </div>
 </div>
@@ -1582,7 +1582,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6190476190476191
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.658008658008658
 </pre></div>
 </div>
 </div>
@@ -1627,7 +1627,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6363636363636364
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6666666666666666
 </pre></div>
 </div>
 </div>
@@ -1672,7 +1672,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6406926406926406
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6623376623376623
 </pre></div>
 </div>
 </div>
