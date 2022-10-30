@@ -667,18 +667,12 @@ title="Print to PDF"
 
 <span class="c1">### Modelling </span>
 <span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">roc_auc_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">recall_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">f1_score</span><span class="p">,</span> <span class="n">roc_curve</span><span class="p">,</span> <span class="n">roc_auc_score</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 <span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span>
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">VotingClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MultiLabelBinarizer</span>
 
 <span class="c1">### Remove unnecessary warnings</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -715,6 +709,40 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>change dataframe’s label</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;quality&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;prescreen&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;ma&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;exudate&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;euDist&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;diameter&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;amfm_class&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">19</span><span class="p">:</span>
+        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">col_names</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
@@ -723,7 +751,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-5474005b-3e77-455b-ad93-de55ad10ca3d">
+  <div id="df-ec08ff0f-b95e-4c49-aada-47920a218848">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -743,26 +771,26 @@ title="Print to PDF"
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-      <th>5</th>
-      <th>6</th>
-      <th>7</th>
-      <th>8</th>
-      <th>9</th>
-      <th>10</th>
-      <th>11</th>
-      <th>12</th>
-      <th>13</th>
-      <th>14</th>
-      <th>15</th>
-      <th>16</th>
-      <th>17</th>
-      <th>18</th>
-      <th>Class</th>
+      <th>quality</th>
+      <th>prescreen</th>
+      <th>ma2</th>
+      <th>ma3</th>
+      <th>ma4</th>
+      <th>ma5</th>
+      <th>ma6</th>
+      <th>ma7</th>
+      <th>exudate8</th>
+      <th>exudate9</th>
+      <th>exudate10</th>
+      <th>exudate11</th>
+      <th>exudate12</th>
+      <th>exudate13</th>
+      <th>exudate14</th>
+      <th>exudate15</th>
+      <th>euDist</th>
+      <th>diameter</th>
+      <th>amfm_class</th>
+      <th>label</th>
     </tr>
   </thead>
   <tbody>
@@ -1023,7 +1051,7 @@ title="Print to PDF"
 </table>
 <p>1151 rows × 20 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-5474005b-3e77-455b-ad93-de55ad10ca3d')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-ec08ff0f-b95e-4c49-aada-47920a218848')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1074,12 +1102,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-5474005b-3e77-455b-ad93-de55ad10ca3d button.colab-df-convert');
+          document.querySelector('#df-ec08ff0f-b95e-4c49-aada-47920a218848 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-5474005b-3e77-455b-ad93-de55ad10ca3d');
+          const element = document.querySelector('#df-ec08ff0f-b95e-4c49-aada-47920a218848');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1099,40 +1127,6 @@ title="Print to PDF"
     </div>
   </div>
 </div></div>
-</div>
-<ul class="simple">
-<li><p>change dataframe’s label</p></li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;quality&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;prescreen&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">7</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;ma&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">8</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;exudate&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">16</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;euDist&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">17</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;diameter&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;amfm_class&quot;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">19</span><span class="p">:</span>
-        <span class="n">col_names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;label&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">col_names</span>
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="create-normalize-and-unnormalized-data">
