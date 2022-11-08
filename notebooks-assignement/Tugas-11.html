@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Best Accuracy Between Normalization vs Unnomarlization (Tugas 9) &#8212; Data Mining</title>
+    <title>Ensamble Stacking (Tugas 12) &#8212; Data Mining</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Ensamble Stacking (Tugas 12)" href="Tugas-11.html" />
-    <link rel="prev" title="Implementasi Naive Bayes Studi Kasus Peminjaman Uang (Tugas 8)" href="Tugas-9.html" />
+    <link rel="prev" title="Best Accuracy Between Normalization vs Unnomarlization (Tugas 9)" href="Tugas-10.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -166,13 +165,13 @@ const thebe_selector_output = ".output, .cell_output"
    Implementasi Naive Bayes Studi Kasus Peminjaman Uang  (Tugas 8)
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tugas-10.html">
    Best Accuracy Between Normalization vs Unnomarlization  (Tugas 9)
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Tugas-11.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Ensamble Stacking (Tugas 12)
   </a>
  </li>
@@ -235,7 +234,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/Tugas-10.ipynb"
+        <a href="https://mybinder.org/v2/gh/MuhammadKurniaSani-me/datamining/gh-pages?urlpath=tree/_sources/notebooks-assignement/Tugas-11.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -253,7 +252,7 @@ title="Launch on Binder"
       </li>
       
       <li>
-        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/Tugas-10.ipynb"
+        <a href="https://colab.research.google.com/github/MuhammadKurniaSani-me/datamining/blob/gh-pages/_sources/notebooks-assignement/Tugas-11.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -313,7 +312,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/Tugas-10.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/MuhammadKurniaSani-me/datamining/issues/new?title=Issue%20on%20page%20%2Fnotebooks-assignement/Tugas-11.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -341,7 +340,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/notebooks-assignement/Tugas-10.ipynb"
+        <a href="../_sources/notebooks-assignement/Tugas-11.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -411,6 +410,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing-data">
+     Preprocessing Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-normalize-and-unnormalized-data">
      Create Normalize and Unnormalized data
     </a>
@@ -500,6 +504,61 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-stacking">
+     Ensemble Stacking
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ensemble-stacking-dengan-data-yang-sudah-di-normalisasi">
+       Ensemble Stacking dengan data yang sudah di normalisasi
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#meta-classifier-is-decision-tree-classifier">
+         Meta Classifier is Decision Tree Classifier
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#meta-classifier-is-logistic-regression">
+         Meta Classifier is Logistic Regression
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#meta-classifier-is-knn-k-7">
+         Meta Classifier is KNN (K = 7)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ensemble-stacking-dengan-data-yang-tidak-di-normalisasi">
+       Ensemble Stacking dengan data yang
+       <strong>
+        tidak
+       </strong>
+       di normalisasi
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Meta Classifier is Decision Tree Classifier
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Meta Classifier is Logistic Regression
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id8">
+         Meta Classifier is KNN (K = 7)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -511,7 +570,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Best Accuracy Between Normalization vs Unnomarlization  (Tugas 9)</h1>
+                <h1>Ensamble Stacking (Tugas 12)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -532,6 +591,11 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#preprocessing-data">
+     Preprocessing Data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#create-normalize-and-unnormalized-data">
      Create Normalize and Unnormalized data
     </a>
@@ -621,6 +685,61 @@ title="Print to PDF"
      </li>
     </ul>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensemble-stacking">
+     Ensemble Stacking
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ensemble-stacking-dengan-data-yang-sudah-di-normalisasi">
+       Ensemble Stacking dengan data yang sudah di normalisasi
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#meta-classifier-is-decision-tree-classifier">
+         Meta Classifier is Decision Tree Classifier
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#meta-classifier-is-logistic-regression">
+         Meta Classifier is Logistic Regression
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#meta-classifier-is-knn-k-7">
+         Meta Classifier is KNN (K = 7)
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ensemble-stacking-dengan-data-yang-tidak-di-normalisasi">
+       Ensemble Stacking dengan data yang
+       <strong>
+        tidak
+       </strong>
+       di normalisasi
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id6">
+         Meta Classifier is Decision Tree Classifier
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id7">
+         Meta Classifier is Logistic Regression
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id8">
+         Meta Classifier is KNN (K = 7)
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
 </ul>
@@ -633,26 +752,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="best-accuracy-between-normalization-vs-unnomarlization-tugas-9">
-<h1>Best Accuracy Between Normalization vs Unnomarlization  (Tugas 9)<a class="headerlink" href="#best-accuracy-between-normalization-vs-unnomarlization-tugas-9" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ensamble-stacking-tugas-12">
+<h1>Ensamble Stacking (Tugas 12)<a class="headerlink" href="#ensamble-stacking-tugas-12" title="Permalink to this headline">#</a></h1>
 <section id="proses">
 <h2>Proses<a class="headerlink" href="#proses" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Baca data <em>Diabetic Retinopathy Debrecen Data Set</em></p></li>
 <li><p>Buat data tes &amp; data latih</p></li>
-<li><p>Cari akurasi dari algoritma berikut</p></li>
-</ul>
-<blockquote>
-<div><p>Gaussian Naive Bayes</p>
-</div></blockquote>
-<blockquote>
-<div><p>K - Nearest Neighbors</p>
-</div></blockquote>
-<blockquote>
-<div><p>Decision Tree</p>
-</div></blockquote>
-<ul class="simple">
-<li><p>Bandingkan akurasi dari setiap algoritma</p></li>
+<li><p>Cari akurasi dari algoritma</p></li>
 </ul>
 <section id="persiapan-lingkungan">
 <h3>Persiapan Lingkungan<a class="headerlink" href="#persiapan-lingkungan" title="Permalink to this headline">#</a></h3>
@@ -675,6 +782,12 @@ title="Print to PDF"
 <span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">LabelEncoder</span>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">cross_val_score</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="c1">### ensamble stacking</span>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">StackingClassifier</span>
 
 <span class="c1">### Remove unnecessary warnings</span>
 <span class="kn">import</span> <span class="nn">warnings</span>
@@ -711,9 +824,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>change dataframe’s label</p></li>
-</ul>
+</section>
+<section id="preprocessing-data">
+<h3>Preprocessing Data<a class="headerlink" href="#preprocessing-data" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">col_names</span> <span class="o">=</span> <span class="p">[]</span>
@@ -753,7 +866,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b988a5a0-47a3-42ce-9e85-db4bbbfd653b">
+  <div id="df-8c390f62-9701-4791-a4fe-fe8ecd693b8d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -1053,7 +1166,7 @@ title="Print to PDF"
 </table>
 <p>1151 rows × 20 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b988a5a0-47a3-42ce-9e85-db4bbbfd653b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-8c390f62-9701-4791-a4fe-fe8ecd693b8d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -1104,12 +1217,12 @@ title="Print to PDF"
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b988a5a0-47a3-42ce-9e85-db4bbbfd653b button.colab-df-convert');
+          document.querySelector('#df-8c390f62-9701-4791-a4fe-fe8ecd693b8d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b988a5a0-47a3-42ce-9e85-db4bbbfd653b');
+          const element = document.querySelector('#df-8c390f62-9701-4791-a4fe-fe8ecd693b8d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -1683,6 +1796,169 @@ title="Print to PDF"
 </section>
 </section>
 </section>
+<section id="ensemble-stacking">
+<h3>Ensemble Stacking<a class="headerlink" href="#ensemble-stacking" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>Teknik menggunakan banyak model untuk menghasilkan satu model prediksi terbaik</p>
+</div></blockquote>
+<p>Contoh <strong>Stack Classifier</strong></p>
+<ul class="simple">
+<li><p><em>gnb</em> adalah Gaussian Naive Bayes</p></li>
+<li><p><em>knn-3</em> adalah KNN dengan K = 3</p></li>
+<li><p><em>knn-5</em> adalah KNN dengan K = 5</p></li>
+<li><p><em>knn-7</em> adalah KNN dengan K = 7</p></li>
+<li><p><em>knn-10</em> adalah KNN dengan K = 10</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;gnb&#39;</span><span class="p">,</span><span class="n">clf_norm_nb</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;knn-3&#39;</span><span class="p">,</span><span class="n">clf_norm_knn_3</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;knn-5&#39;</span><span class="p">,</span><span class="n">clf_norm_knn_5</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;knn-7&#39;</span><span class="p">,</span><span class="n">clf_norm_knn_7</span><span class="p">),</span> 
+    <span class="p">(</span><span class="s1">&#39;knn-10&#39;</span><span class="p">,</span><span class="n">clf_norm_knn_10</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<section id="ensemble-stacking-dengan-data-yang-sudah-di-normalisasi">
+<h4>Ensemble Stacking dengan data yang sudah di normalisasi<a class="headerlink" href="#ensemble-stacking-dengan-data-yang-sudah-di-normalisasi" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estimators_norm</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;gnb&#39;</span><span class="p">,</span><span class="n">clf_norm_nb</span><span class="p">),(</span><span class="s1">&#39;knn-5&#39;</span><span class="p">,</span><span class="n">clf_norm_knn_5</span><span class="p">),(</span><span class="s1">&#39;knn-7&#39;</span><span class="p">,</span><span class="n">clf_norm_knn_7</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_estimator_dtc</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">final_estimator_lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">final_estimator_knn_7</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">k_is_7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="meta-classifier-is-decision-tree-classifier">
+<h5>Meta Classifier is Decision Tree Classifier<a class="headerlink" href="#meta-classifier-is-decision-tree-classifier" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack_model</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span> <span class="n">estimators</span> <span class="o">=</span> <span class="n">estimators_norm</span><span class="p">,</span><span class="n">final_estimator</span> <span class="o">=</span> <span class="n">final_estimator_dtc</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">stack_model</span><span class="p">,</span><span class="n">X_train_norm</span><span class="p">,</span><span class="n">y_train_norm</span><span class="p">,</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy score of is:&quot;</span><span class="p">,</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy score of is: 0.5945652173913044
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="meta-classifier-is-logistic-regression">
+<h5>Meta Classifier is Logistic Regression<a class="headerlink" href="#meta-classifier-is-logistic-regression" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack_model</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span> <span class="n">estimators</span> <span class="o">=</span> <span class="n">estimators_norm</span><span class="p">,</span><span class="n">final_estimator</span> <span class="o">=</span> <span class="n">final_estimator_lr</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">stack_model</span><span class="p">,</span><span class="n">X_train_norm</span><span class="p">,</span><span class="n">y_train_norm</span><span class="p">,</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy score of is:&quot;</span><span class="p">,</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy score of is: 0.6543478260869565
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="meta-classifier-is-knn-k-7">
+<h5>Meta Classifier is KNN (K = 7)<a class="headerlink" href="#meta-classifier-is-knn-k-7" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack_model</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span> <span class="n">estimators</span> <span class="o">=</span> <span class="n">estimators_norm</span><span class="p">,</span><span class="n">final_estimator</span> <span class="o">=</span> <span class="n">final_estimator_knn_7</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">stack_model</span><span class="p">,</span><span class="n">X_train_norm</span><span class="p">,</span><span class="n">y_train_norm</span><span class="p">,</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy score of is:&quot;</span><span class="p">,</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy score of is: 0.6130434782608696
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="ensemble-stacking-dengan-data-yang-tidak-di-normalisasi">
+<h4>Ensemble Stacking dengan data yang <strong>tidak</strong> di normalisasi<a class="headerlink" href="#ensemble-stacking-dengan-data-yang-tidak-di-normalisasi" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">estimators_unnorm</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;gnb&#39;</span><span class="p">,</span><span class="n">clf_nb</span><span class="p">),(</span><span class="s1">&#39;knn-5&#39;</span><span class="p">,</span><span class="n">clf_knn_5</span><span class="p">),(</span><span class="s1">&#39;knn-7&#39;</span><span class="p">,</span><span class="n">clf_knn_7</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">final_estimator_dtc</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">final_estimator_lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+<span class="n">final_estimator_knn_7</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="n">k_is_7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id6">
+<h5>Meta Classifier is Decision Tree Classifier<a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack_model</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span> <span class="n">estimators</span> <span class="o">=</span> <span class="n">estimators_unnorm</span><span class="p">,</span><span class="n">final_estimator</span> <span class="o">=</span> <span class="n">final_estimator_dtc</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">stack_model</span><span class="p">,</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy score of is:&quot;</span><span class="p">,</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy score of is: 0.601086956521739
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h5>Meta Classifier is Logistic Regression<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack_model</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span> <span class="n">estimators</span> <span class="o">=</span> <span class="n">estimators_unnorm</span><span class="p">,</span><span class="n">final_estimator</span> <span class="o">=</span> <span class="n">final_estimator_lr</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">stack_model</span><span class="p">,</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy score of is:&quot;</span><span class="p">,</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy score of is: 0.6619565217391304
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id8">
+<h5>Meta Classifier is KNN (K = 7)<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stack_model</span> <span class="o">=</span> <span class="n">StackingClassifier</span><span class="p">(</span> <span class="n">estimators</span> <span class="o">=</span> <span class="n">estimators_unnorm</span><span class="p">,</span><span class="n">final_estimator</span> <span class="o">=</span> <span class="n">final_estimator_knn_7</span><span class="p">)</span>
+<span class="n">score</span> <span class="o">=</span> <span class="n">cross_val_score</span><span class="p">(</span><span class="n">stack_model</span><span class="p">,</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span><span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The accuracy score of is:&quot;</span><span class="p">,</span><span class="n">score</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The accuracy score of is: 0.6228260869565216
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
 </section>
 </section>
 
@@ -1713,19 +1989,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Tugas-9.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Tugas-10.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Implementasi Naive Bayes Studi Kasus Peminjaman Uang  (Tugas 8)</p>
+            <p class="prev-next-title">Best Accuracy Between Normalization vs Unnomarlization  (Tugas 9)</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="Tugas-11.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Ensamble Stacking (Tugas 12)</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
