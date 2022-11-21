@@ -50,8 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Ensamble Stacking (Tugas 12)" href="Tugas-11.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -128,7 +131,7 @@ const thebe_selector_output = ".output, .cell_output"
   Tugas
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas-2.html">
    Diskritisasi (Tugas 2)
@@ -167,6 +170,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="Tugas-11.html">
    Ensamble Stacking (Tugas 12)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Best Accuracy Model for Deployment (Tugas UAS)
   </a>
  </li>
 </ul>
@@ -399,6 +407,21 @@ title="Print to PDF"
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     Data Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attribute-information">
+     Attribute Information:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-paper">
+     Relevant Paper
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#import-library">
      Import Library
     </a>
@@ -471,6 +494,21 @@ title="Print to PDF"
    Read-Me !
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-description">
+     Data Description
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#attribute-information">
+     Attribute Information:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relevant-paper">
+     Relevant Paper
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#import-library">
      Import Library
@@ -552,6 +590,141 @@ title="Print to PDF"
 **  KNN</p></li>
 <li><p>👉  Cari model dengan <em>accuracy</em> terbaik</p></li>
 </ul>
+<section id="data-description">
+<h3>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Data Set Name: Dry Bean Dataset</p></li>
+<li><p>Abstract:</p>
+<ul class="simple">
+<li><p>Images of 13,611 grains</p></li>
+<li><p>7 different registered dry beans were taken</p></li>
+<li><p>Taken with a high-resolution camera.</p></li>
+<li><p>A total of 16 features</p></li>
+<li><p>12 dimensions</p></li>
+<li><p>4 shape forms</p></li>
+</ul>
+</li>
+<li><p>Source:</p>
+<ul class="simple">
+<li><p>Murat KOKLU</p>
+<ul>
+<li><p>Faculty of Technology,</p></li>
+<li><p>Selcuk University,</p></li>
+<li><p>TURKEY.</p></li>
+<li><p>ORCID : 0000-0002-2737-2360</p></li>
+<li><p><a class="reference external" href="mailto:mkoklu&#37;&#52;&#48;selcuk&#46;edu&#46;tr">mkoklu<span>&#64;</span>selcuk<span>&#46;</span>edu<span>&#46;</span>tr</a></p></li>
+</ul>
+</li>
+<li><p>Ilker Ali OZKAN</p>
+<ul>
+<li><p>Faculty of Technology,</p></li>
+<li><p>Selcuk University,</p></li>
+<li><p>TURKEY.</p></li>
+<li><p>ORCID : 0000-0002-5715-1040</p></li>
+<li><p><a class="reference external" href="mailto:ilkerozkan&#37;&#52;&#48;selcuk&#46;edu&#46;tr">ilkerozkan<span>&#64;</span>selcuk<span>&#46;</span>edu<span>&#46;</span>tr</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Data Type : Multivariate</p></li>
+<li><p>Task : Classification</p></li>
+<li><p>Attribute Type:</p>
+<ul class="simple">
+<li><p>Categorical</p></li>
+<li><p>Integer</p></li>
+<li><p>Real</p></li>
+</ul>
+</li>
+<li><p>Area : CS / Engineering</p></li>
+<li><p>Format Type : Matrix</p>
+<ul class="simple">
+<li><p>Does your data set contain missing values? <em><strong>No</strong></em></p></li>
+<li><p>Number of Instances (records in your data set): <em><strong>13611</strong></em></p></li>
+<li><p>Number of Attributes (fields within each record): <em><strong>17</strong></em></p></li>
+</ul>
+</li>
+<li><p>Relevant Information:</p></li>
+</ol>
+<blockquote>
+<div><p>Seven different types of dry beans were used in this research, taking into account the features such as form, shape, type, and structure by the market situation. A computer vision system was developed to distinguish seven different registered varieties of dry beans with similar features in order to obtain uniform seed classification. For the classification model, images of 13,611 grains of 7 different registered dry beans were taken with a high-resolution camera. Bean images obtained by computer vision system were subjected to segmentation and feature extraction stages, and a total of 16 features; 12 dimensions and 4 shape forms, were obtained from the grains.</p>
+</div></blockquote>
+</section>
+<section id="attribute-information">
+<h3>Attribute Information:<a class="headerlink" href="#attribute-information" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p><strong>Area (<em>A</em>)</strong>:</p>
+<ul class="simple">
+<li><p>The area of a bean zone and the number of pixels within its boundaries.</p></li>
+</ul>
+</li>
+<li><p><strong>Perimeter (<em>P</em>)</strong>:</p>
+<ul class="simple">
+<li><p>Bean circumference is defined as the length of its border.</p></li>
+</ul>
+</li>
+<li><p><strong>Major axis length (<em>L</em>)</strong>:</p>
+<ul class="simple">
+<li><p>The distance between the ends of the longest line that can be drawn from a bean.</p></li>
+</ul>
+</li>
+<li><p><strong>Minor axis length (<em>l</em>)</strong>:</p>
+<ul class="simple">
+<li><p>The longest line that can be drawn from the bean while standing perpendicular to the main axis.</p></li>
+</ul>
+</li>
+<li><p><strong>Aspect ratio (<em>K</em>)</strong>:</p>
+<ul class="simple">
+<li><p>Defines the relationship between L and l.</p></li>
+</ul>
+</li>
+<li><p><strong>Eccentricity (<em>Ec</em>)</strong>:</p>
+<ul class="simple">
+<li><p>Eccentricity of the ellipse having the same moments as the region.</p></li>
+</ul>
+</li>
+<li><p><strong>Convex area (<em>C</em>)</strong>:</p>
+<ul class="simple">
+<li><p>Number of pixels in the smallest convex polygon that can contain the area of a bean seed.</p></li>
+</ul>
+</li>
+<li><p><strong>Equivalent diameter (<em>Ed</em>)</strong>:</p>
+<ul class="simple">
+<li><p>The diameter of a circle having the same area as a bean seed area.</p></li>
+</ul>
+</li>
+<li><p><strong>Extent (<em>Ex</em>)</strong>:</p>
+<ul class="simple">
+<li><p>The ratio of the pixels in the bounding box to the bean area.</p></li>
+</ul>
+</li>
+<li><p><strong>olidity (<em>S</em>)</strong>:
+*    Also known as convexity. The ratio of the pixels in the convex shell to those found in beans.</p></li>
+<li><p><strong>Roundness (<em>R</em>)</strong>:
+*    Calculated with the following formula
+<span class="math notranslate nohighlight">\( \frac{4 \pi A}{P^2} \)</span></p></li>
+<li><p><strong>Compactness (C<em>O</em>)</strong>:
+*    Measures the roundness of an object:
+<span class="math notranslate nohighlight">\( \frac{Ed}{L} \)</span></p></li>
+<li><p><strong>hapeFactor1 (<em>SF1</em>)</strong></p></li>
+<li><p><strong>hapeFactor2 (<em>SF2</em>)</strong></p></li>
+<li><p><strong>hapeFactor3 (<em>SF3</em>)</strong></p></li>
+<li><p><strong>hapeFactor4 (<em>SF4</em>)</strong></p></li>
+<li><p>**Class (Seker, Barbunya, Bombay, Cali, Dermosan, Horoz and <strong>Sira)</strong></p></li>
+</ol>
+</section>
+<section id="relevant-paper">
+<h3>Relevant Paper<a class="headerlink" href="#relevant-paper" title="Permalink to this headline">#</a></h3>
+<blockquote>
+<div><p>KOKLU, M. and OZKAN, I.A., (2020), “Multiclass Classification of Dry Beans Using Computer Vision and Machine Learning Techniques.” Computers and Electronics in Agriculture, 174, 105507.
+DOI: <a class="reference external" href="https://doi.org/10.1016/j.compag.2020.105507">https://doi.org/10.1016/j.compag.2020.105507</a></p>
+</div></blockquote>
+<hr class="docutils" />
+<blockquote>
+<div><p>Citation Requests / Acknowledgements:
+KOKLU, M. and OZKAN, I.A., (2020), “Multiclass Classification of Dry Beans Using Computer Vision and Machine Learning Techniques.” Computers and Electronics in Agriculture, 174, 105507.
+DOI: <a class="reference external" href="https://doi.org/10.1016/j.compag.2020.105507">https://doi.org/10.1016/j.compag.2020.105507</a></p>
+</div></blockquote>
+</section>
 <section id="import-library">
 <h3>Import Library<a class="headerlink" href="#import-library" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
@@ -649,7 +822,7 @@ None
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-  <div id="df-b6b61992-2041-47fe-bba5-cb521bc9450a">
+  <div id="df-2eab8e91-5d7d-4f79-8d07-4ed1cc02441d">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -892,7 +1065,7 @@ None
   </tbody>
 </table>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-b6b61992-2041-47fe-bba5-cb521bc9450a')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-2eab8e91-5d7d-4f79-8d07-4ed1cc02441d')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
 
@@ -943,12 +1116,12 @@ None
 
       <script>
         const buttonEl =
-          document.querySelector('#df-b6b61992-2041-47fe-bba5-cb521bc9450a button.colab-df-convert');
+          document.querySelector('#df-2eab8e91-5d7d-4f79-8d07-4ed1cc02441d button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-b6b61992-2041-47fe-bba5-cb521bc9450a');
+          const element = document.querySelector('#df-2eab8e91-5d7d-4f79-8d07-4ed1cc02441d');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -982,6 +1155,10 @@ None
 </div>
 <section id="split-data-class-data-value">
 <h4>Split Data Class &amp; Data Value<a class="headerlink" href="#split-data-class-data-value" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># X for values</span>
+<span class="c1"># y for labels</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Class&quot;</span><span class="p">])</span>
@@ -1047,14 +1224,31 @@ None
 </div>
 </div>
 </div>
+<p><em><strong>Label Set</strong></em></p>
+<ul class="simple">
+<li><p>b’BOMBAY’</p></li>
+<li><p>b’HOROZ’</p></li>
+<li><p>b’DERMASON’</p></li>
+<li><p>b’BARBUNYA’</p></li>
+<li><p>b’SIRA’</p></li>
+<li><p>b’SEKER’</p></li>
+<li><p>b’CALI</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labelset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">labelset</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[b&#39;SEKER&#39; b&#39;SEKER&#39; b&#39;SEKER&#39; ... b&#39;DERMASON&#39; b&#39;DERMASON&#39; b&#39;DERMASON&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{b&#39;SIRA&#39;, b&#39;DERMASON&#39;, b&#39;BOMBAY&#39;, b&#39;BARBUNYA&#39;, b&#39;SEKER&#39;, b&#39;HOROZ&#39;, b&#39;CALI&#39;}
 </pre></div>
 </div>
 </div>
@@ -1076,6 +1270,34 @@ None
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 5 5 ... 3 3 3]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">encoded_labelset</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Number <em><strong>0</strong></em> as <em>b’BOMBAY’</em></p></li>
+<li><p>Number <em><strong>1</strong></em> as <em>b’HOROZ’</em></p></li>
+<li><p>Number <em><strong>2</strong></em> as <em>b’DERMASON’</em></p></li>
+<li><p>Number <em><strong>3</strong></em> as <em>b’BARBUNYA’</em></p></li>
+<li><p>Number <em><strong>4</strong></em> as <em>b’SIRA’</em></p></li>
+<li><p>Number <em><strong>5</strong></em> as <em>b’SEKER’</em></p></li>
+<li><p>Number <em><strong>6</strong></em> as <em>b’CALI</em></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">encoded_labelset</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{0, 1, 2, 3, 4, 5, 6}
 </pre></div>
 </div>
 </div>
@@ -1280,6 +1502,13 @@ None
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Tugas-11.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Ensamble Stacking (Tugas 12)</p>
+        </div>
+    </a>
 </div>
             </footer>
         </div>
